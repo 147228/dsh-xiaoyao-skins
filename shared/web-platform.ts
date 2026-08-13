@@ -1,3 +1,9 @@
+/*
+ * Copyright (c) 2026, zhu1090093659.
+ * Derived from zhu1090093659/dsh-web-ui under BSD-3-Clause.
+ * See THIRD_PARTY_NOTICES.md for the complete license.
+ */
+
 /**
  * Shared browser platform modules. Seeding, bundling externals, and Vite
  * aliases consume this list so their module identities cannot drift.

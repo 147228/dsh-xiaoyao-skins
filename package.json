@@ -1,6 +1,6 @@
 {
   "name": "@xiaoyao-ai/dsh-xiaoyao-skins",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "private": true,
   "description": "夕小瑶 DeepSeek Harness Web 皮肤合集、安装器与创作者工具链",
   "license": "SEE LICENSE IN LICENSE",
@@ -25,9 +25,12 @@
     "bin",
     "catalog",
     "templates",
+    "shared",
     "scripts/validate-skins.mjs",
     "README.md",
-    "LICENSE"
+    "LICENSE",
+    "ASSET_LICENSE.md",
+    "THIRD_PARTY_NOTICES.md"
   ],
   "scripts": {
     "catalog:build": "node scripts/build-catalog.mjs",

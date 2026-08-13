@@ -1,3 +1,9 @@
+/*
+ * Portions Copyright (c) 2026, zhu1090093659.
+ * Derived from zhu1090093659/dsh-web-ui under BSD-3-Clause.
+ * See THIRD_PARTY_NOTICES.md for the complete license.
+ */
+
 /**
  * Shared tsdown preset for UI plugin client bundles — the single source of
  * truth for every dsh-web-ui plugin's build (previously copied per-package

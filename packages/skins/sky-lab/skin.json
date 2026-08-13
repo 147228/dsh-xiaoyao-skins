@@ -9,8 +9,8 @@
   "accent": "#5795ff",
   "bodyAttr": "data-dsh-sky-lab",
   "package": "@xiaoyao-ai/dsh-client-ui-skin-sky-lab",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "wiring": { "id": "ui-skin-sky-lab", "bundleWired": true },
-  "preview": { "dark": "preview/dark.webp" },
+  "preview": { "dark": "preview/dark.jpg" },
   "order": 10
 }

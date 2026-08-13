@@ -9,7 +9,7 @@
   "accent": "#ff6fb6",
   "bodyAttr": "data-dsh-black-whale",
   "package": "@xiaoyao-ai/dsh-client-ui-skin-black-whale",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "homepage": "https://github.com/147228/dsh-xiaoyao-skins#black-whale",
   "wiring": {
     "id": "ui-skin-black-whale",

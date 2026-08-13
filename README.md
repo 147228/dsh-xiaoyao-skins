@@ -101,6 +101,8 @@ pnpm pack:release
 ## 许可与声明
 
 - 代码：MIT；
+- 构建支持：部分文件衍生自 `zhu1090093659/dsh-web-ui`，按 BSD-3-Clause
+  保留原作者版权与完整许可文本；
 - 夕小瑶角色、美术和预览素材：默认按 [CC BY-NC 4.0](ASSET_LICENSE.md)；
 - 第三方素材与例外：见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)；
 - 本项目为社区项目，不是 DeepSeek 官方产品。DeepSeek、DeepSeek Harness 及相关标识

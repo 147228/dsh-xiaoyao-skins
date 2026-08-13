@@ -9,8 +9,8 @@
   "accent": "#d83a30",
   "bodyAttr": "data-dsh-great-wall-beacon",
   "package": "@xiaoyao-ai/dsh-client-ui-skin-great-wall-beacon",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "wiring": { "id": "ui-skin-great-wall-beacon", "bundleWired": true },
-  "preview": { "dark": "preview/dark.png" },
+  "preview": { "dark": "preview/dark.jpg" },
   "order": 11
 }

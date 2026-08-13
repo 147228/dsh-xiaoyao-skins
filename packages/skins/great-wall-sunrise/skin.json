@@ -9,8 +9,8 @@
   "accent": "#c92d27",
   "bodyAttr": "data-dsh-great-wall-sunrise",
   "package": "@xiaoyao-ai/dsh-client-ui-skin-great-wall-sunrise",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "wiring": { "id": "ui-skin-great-wall-sunrise", "bundleWired": true },
-  "preview": { "dark": "preview/dark.png" },
+  "preview": { "dark": "preview/dark.jpg" },
   "order": 12
 }

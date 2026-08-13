@@ -9,13 +9,13 @@
   "accent": "#ff79bd",
   "bodyAttr": "data-dsh-xiaoyao",
   "package": "@xiaoyao-ai/dsh-client-ui-skin-xiaoyao",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "wiring": {
     "id": "ui-skin-xiaoyao",
     "bundleWired": true
   },
   "preview": {
-    "dark": "preview/dark.webp"
+    "dark": "preview/dark.jpg"
   },
   "order": 9
 }
