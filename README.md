@@ -1,8 +1,6 @@
 # 夕小瑶 × DeepSeek Harness 皮肤工坊
 
-一套面向真实 DeepSeek Harness Web profile 的社区皮肤合集。不是静态仿站，也不替换
-会话、模型、工具、沙箱或插件系统；每套皮肤都是一个可安装、可卸载、可测试的 DSH
-表现层插件。
+一套面向真实 DeepSeek Harness Web profile 的社区皮肤合集表现层插件。每套皮肤都是一个可安装、可卸载、可测试的 DSH，不替换会话、模型、工具、沙箱或插件系统；
 
 [![CI](https://github.com/147228/dsh-xiaoyao-skins/actions/workflows/ci.yml/badge.svg)](https://github.com/147228/dsh-xiaoyao-skins/actions/workflows/ci.yml)
 [![Gallery](https://img.shields.io/badge/Gallery-在线预览-ff6fae)](https://147228.github.io/dsh-xiaoyao-skins/)
