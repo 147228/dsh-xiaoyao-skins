@@ -8,6 +8,28 @@
 [![Gallery](https://img.shields.io/badge/Gallery-在线预览-ff6fae)](https://147228.github.io/dsh-xiaoyao-skins/)
 [![DSH](https://img.shields.io/badge/DeepSeek%20Harness-0.1.0--rc.6-111827)](https://www.npmjs.com/package/@deepseek-ai/dsh)
 
+> [!IMPORTANT]
+> **本仓库不是“所有内容统一 MIT”。代码、衍生构建支持与美术素材适用不同许可。**
+> 使用、修改或再分发前，请保留适用的版权声明，并确认你的使用场景符合下表。
+
+## 版权与使用边界
+
+| 内容 | 适用许可与来源 | 可以做什么 | 必须注意 |
+| --- | --- | --- | --- |
+| 本项目原创源代码 | [MIT](LICENSE) · Copyright © 2026 Xiaoyao AI / 夕小瑶科技说及贡献者 | 使用、修改、合并、再分发和商用 | 副本或重要部分须保留 MIT 版权与许可声明 |
+| `shared/tsdown.client.ts`、`shared/web-platform.ts` 等衍生构建支持 | 衍生自 [`zhu1090093659/dsh-web-ui`](https://github.com/zhu1090093659/dsh-web-ui)，原作者代码为 BSD-3-Clause · Copyright © 2026 zhu1090093659 | 在遵守 BSD-3-Clause 的前提下使用、修改和再分发 | 源码和二进制分发均须保留原作者版权、许可条件和免责声明；不得暗示原作者背书 |
+| 夕小瑶角色、美术、皮肤背景和预览图 | [CC BY-NC 4.0](ASSET_LICENSE.md)，除非具体文件另有声明 | 署名后的个人使用、研究、展示和其他非商业使用 | **不得直接用于商业用途**；付费分发、商品、广告植入及商业图像模型训练需另行取得书面授权 |
+| DeepSeek Harness 代码与构建约定 | 来自 [`deepseek-ai/deepseek-harness`](https://github.com/deepseek-ai/deepseek-harness)，按其 MIT 许可使用 | 按原项目许可使用 | DeepSeek 名称、鲸鱼标识及其他商标权利不因本仓库而获得授权 |
+
+> [!WARNING]
+> **独立社区项目声明：** 本项目与 DeepSeek 及 `zhu1090093659/dsh-web-ui`
+> 原作者不存在隶属、赞助、认证或背书关系。转载截图、发布整合包或迁入代码时，不能只保留
+> 本仓库的 MIT 文件；还必须一并保留对应的素材许可与第三方声明。
+
+完整文本与逐项来源见 [LICENSE](LICENSE)、[ASSET_LICENSE.md](ASSET_LICENSE.md) 和
+[THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。如计划将小瑶角色或美术用于商业项目，
+请先联系权利人取得单独书面授权。
+
 ## 一行换肤
 
 需要 Node.js 24+，并已安装、初始化 DeepSeek Harness。命令默认操作 `web` profile。
@@ -98,12 +120,12 @@ pnpm pack:release
 六套皮肤单测、安装器单测、构建结果与展厅。合并请求还会在 Linux、macOS、Windows
 三套环境中重跑。
 
-## 许可与声明
+## 许可文件索引
 
-- 代码：MIT；
-- 构建支持：部分文件衍生自 `zhu1090093659/dsh-web-ui`，按 BSD-3-Clause
-  保留原作者版权与完整许可文本；
-- 夕小瑶角色、美术和预览素材：默认按 [CC BY-NC 4.0](ASSET_LICENSE.md)；
-- 第三方素材与例外：见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)；
-- 本项目为社区项目，不是 DeepSeek 官方产品。DeepSeek、DeepSeek Harness 及相关标识
-  的权利归各自权利人所有。
+- [LICENSE](LICENSE)：本项目原创源代码的 MIT 许可；
+- [ASSET_LICENSE.md](ASSET_LICENSE.md)：夕小瑶角色、美术与预览素材的 CC BY-NC 4.0
+  条款及商业授权边界；
+- [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)：DeepSeek Harness、
+  `zhu1090093659/dsh-web-ui` 等第三方来源、版权和完整许可文本。
+
+许可摘要只用于帮助理解，不替代上述许可文件的完整条款。
