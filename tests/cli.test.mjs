@@ -4,7 +4,7 @@ import { tmpdir } from 'node:os'
 import { join, resolve } from 'node:path'
 import { spawnSync } from 'node:child_process'
 import test from 'node:test'
-import { createSkin, loadCatalog, planSwitch, renderCommands, useLocalReleaseDirectory } from '../bin/xiaoyao-skin.mjs'
+import { createSkin, isMainModule, loadCatalog, planSwitch, renderCommands, useLocalReleaseDirectory } from '../bin/xiaoyao-skin.mjs'
 
 const catalog = loadCatalog()
 
@@ -53,6 +53,12 @@ test('release smoke mode resolves every source to the isolated local directory',
   for (const skin of local.skins) {
     assert.equal(skin.source, join(localDirectory, skin.releaseAsset))
   }
+})
+
+test('installed bin symlinks resolve to the real CLI module', () => {
+  const canonicalize = (path) => path === '/installed/.bin/xiaoyao-skin' ? '/package/bin/xiaoyao-skin.mjs' : path
+  assert.equal(isMainModule('/installed/.bin/xiaoyao-skin', '/package/bin/xiaoyao-skin.mjs', canonicalize), true)
+  assert.equal(isMainModule('/installed/.bin/other', '/package/bin/xiaoyao-skin.mjs', canonicalize), false)
 })
 
 test('creator command produces a token-free skin that passes doctor', () => {

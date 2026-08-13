@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { cpSync, existsSync, mkdirSync, readFileSync, readdirSync, renameSync, statSync, writeFileSync } from 'node:fs'
+import { cpSync, existsSync, mkdirSync, readFileSync, readdirSync, realpathSync, renameSync, statSync, writeFileSync } from 'node:fs'
 import { homedir } from 'node:os'
 import { basename, dirname, join, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
@@ -11,6 +11,15 @@ const namePattern = /^[a-z0-9]+(?:-[a-z0-9]+)*$/
 
 export function loadCatalog(path = catalogPath) {
   return JSON.parse(readFileSync(path, 'utf8'))
+}
+
+export function isMainModule(argvPath, modulePath = fileURLToPath(import.meta.url), canonicalize = realpathSync) {
+  if (!argvPath) return false
+  try {
+    return canonicalize(argvPath) === canonicalize(modulePath)
+  } catch {
+    return false
+  }
 }
 
 export function useLocalReleaseDirectory(catalog, directory) {
@@ -128,7 +137,7 @@ export function createSkin(name, options = {}) {
 }
 
 function usage() {
-  console.log(`夕小瑶 DSH 皮肤工具\n\n使用：\n  xiaoyao-skin list\n  xiaoyao-skin use <skin|official> [--profile web] [--dry-run]\n  xiaoyao-skin current [--profile web]\n  xiaoyao-skin create <kebab-case-name> [--output path]\n  xiaoyao-skin doctor <skin-directory>\n  xiaoyao-skin submit\n\n一行体验：\n  npx --yes github:147228/dsh-xiaoyao-skins use black-whale`)
+  console.log(`夕小瑶 DSH 皮肤工具\n\n使用：\n  xiaoyao-skin list\n  xiaoyao-skin use <skin|official> [--profile web] [--dry-run]\n  xiaoyao-skin current [--profile web]\n  xiaoyao-skin create <kebab-case-name> [--output path]\n  xiaoyao-skin doctor <skin-directory>\n  xiaoyao-skin submit\n\n一行体验：\n  npx --yes --package=https://github.com/147228/dsh-xiaoyao-skins/releases/latest/download/xiaoyao-skin-kit.tgz xiaoyao-skin use black-whale`)
 }
 
 async function main() {
@@ -188,7 +197,7 @@ async function main() {
   if (command) process.exitCode = 1
 }
 
-if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+if (isMainModule(process.argv[1])) {
   main().catch((error) => {
     console.error(`xiaoyao-skin: ${error.message}`)
     process.exitCode = 1

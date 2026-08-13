@@ -4,7 +4,7 @@
 构成与深海主题不同的轻盈工作台。
 
 ```bash
-npx --yes github:147228/dsh-xiaoyao-skins use sky-lab
+npx --yes --package=https://github.com/147228/dsh-xiaoyao-skins/releases/latest/download/xiaoyao-skin-kit.tgz xiaoyao-skin use sky-lab
 ```
 
 素材在构建阶段内嵌，样式仅在 `body[data-dsh-sky-lab]` 下生效，dispose 后会清理所有

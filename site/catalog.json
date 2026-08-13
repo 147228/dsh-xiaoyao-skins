@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "collection": "@xiaoyao-ai/dsh-xiaoyao-skins",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "compatibility": {
     "dsh": "0.1.0-rc.6",
     "node": ">=24"
@@ -31,7 +31,7 @@
       "preview": "previews/ocean.webp",
       "releaseAsset": "xiaoyao-skin-ocean.tgz",
       "source": "https://github.com/147228/dsh-xiaoyao-skins/releases/latest/download/xiaoyao-skin-ocean.tgz",
-      "install": "npx --yes github:147228/dsh-xiaoyao-skins use ocean",
+      "install": "npx --yes --package=https://github.com/147228/dsh-xiaoyao-skins/releases/latest/download/xiaoyao-skin-kit.tgz xiaoyao-skin use ocean",
       "order": 9
     },
     {
@@ -57,7 +57,7 @@
       "preview": "previews/black-whale.jpg",
       "releaseAsset": "xiaoyao-skin-black-whale.tgz",
       "source": "https://github.com/147228/dsh-xiaoyao-skins/releases/latest/download/xiaoyao-skin-black-whale.tgz",
-      "install": "npx --yes github:147228/dsh-xiaoyao-skins use black-whale",
+      "install": "npx --yes --package=https://github.com/147228/dsh-xiaoyao-skins/releases/latest/download/xiaoyao-skin-kit.tgz xiaoyao-skin use black-whale",
       "order": 10
     },
     {
@@ -83,7 +83,7 @@
       "preview": "previews/sky-lab.webp",
       "releaseAsset": "xiaoyao-skin-sky-lab.tgz",
       "source": "https://github.com/147228/dsh-xiaoyao-skins/releases/latest/download/xiaoyao-skin-sky-lab.tgz",
-      "install": "npx --yes github:147228/dsh-xiaoyao-skins use sky-lab",
+      "install": "npx --yes --package=https://github.com/147228/dsh-xiaoyao-skins/releases/latest/download/xiaoyao-skin-kit.tgz xiaoyao-skin use sky-lab",
       "order": 10
     },
     {
@@ -108,7 +108,7 @@
       "preview": "previews/great-wall-beacon.png",
       "releaseAsset": "xiaoyao-skin-great-wall-beacon.tgz",
       "source": "https://github.com/147228/dsh-xiaoyao-skins/releases/latest/download/xiaoyao-skin-great-wall-beacon.tgz",
-      "install": "npx --yes github:147228/dsh-xiaoyao-skins use great-wall-beacon",
+      "install": "npx --yes --package=https://github.com/147228/dsh-xiaoyao-skins/releases/latest/download/xiaoyao-skin-kit.tgz xiaoyao-skin use great-wall-beacon",
       "order": 11
     },
     {
@@ -133,7 +133,7 @@
       "preview": "previews/great-wall-sunrise.png",
       "releaseAsset": "xiaoyao-skin-great-wall-sunrise.tgz",
       "source": "https://github.com/147228/dsh-xiaoyao-skins/releases/latest/download/xiaoyao-skin-great-wall-sunrise.tgz",
-      "install": "npx --yes github:147228/dsh-xiaoyao-skins use great-wall-sunrise",
+      "install": "npx --yes --package=https://github.com/147228/dsh-xiaoyao-skins/releases/latest/download/xiaoyao-skin-kit.tgz xiaoyao-skin use great-wall-sunrise",
       "order": 12
     },
     {
@@ -158,7 +158,7 @@
       "preview": "previews/great-wall-snow.png",
       "releaseAsset": "xiaoyao-skin-great-wall-snow.tgz",
       "source": "https://github.com/147228/dsh-xiaoyao-skins/releases/latest/download/xiaoyao-skin-great-wall-snow.tgz",
-      "install": "npx --yes github:147228/dsh-xiaoyao-skins use great-wall-snow",
+      "install": "npx --yes --package=https://github.com/147228/dsh-xiaoyao-skins/releases/latest/download/xiaoyao-skin-kit.tgz xiaoyao-skin use great-wall-snow",
       "order": 13
     }
   ]

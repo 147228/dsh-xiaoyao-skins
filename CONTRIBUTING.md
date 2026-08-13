@@ -6,7 +6,7 @@ DSH profile 可安装、卸载干净、素材来源清楚”的贡献。
 ## 最短投稿路径
 
 1. 先提交一条 [皮肤提案](https://github.com/147228/dsh-xiaoyao-skins/issues/new?template=skin_proposal.yml)，避免撞题；
-2. 生成模板：`npx --yes github:147228/dsh-xiaoyao-skins create my-skin`；
+2. 生成模板：`npx --yes --package=https://github.com/147228/dsh-xiaoyao-skins/releases/latest/download/xiaoyao-skin-kit.tgz xiaoyao-skin create my-skin`；
 3. 设计视觉并补全 `skin.json`、README、预览和素材来源；
 4. 执行 `pnpm check` 与 `xiaoyao-skin doctor .`；
 5. 在空白或脱敏的 DSH Web profile 中验证安装、切换、卸载；

@@ -13,19 +13,19 @@
 需要 Node.js 24+，并已安装、初始化 DeepSeek Harness。命令默认操作 `web` profile。
 
 ```bash
-npx --yes github:147228/dsh-xiaoyao-skins use black-whale
+npx --yes --package=https://github.com/147228/dsh-xiaoyao-skins/releases/latest/download/xiaoyao-skin-kit.tgz xiaoyao-skin use black-whale
 ```
 
 切换另一套皮肤：
 
 ```bash
-npx --yes github:147228/dsh-xiaoyao-skins use ocean
+npx --yes --package=https://github.com/147228/dsh-xiaoyao-skins/releases/latest/download/xiaoyao-skin-kit.tgz xiaoyao-skin use ocean
 ```
 
 恢复官方界面：
 
 ```bash
-npx --yes github:147228/dsh-xiaoyao-skins use official
+npx --yes --package=https://github.com/147228/dsh-xiaoyao-skins/releases/latest/download/xiaoyao-skin-kit.tgz xiaoyao-skin use official
 ```
 
 可用 `--profile <name>` 指定其他 profile，用 `--dry-run` 只查看将执行的 DSH 命令。
@@ -69,7 +69,7 @@ flowchart LR
 ## 做一套自己的皮肤
 
 ```bash
-npx --yes github:147228/dsh-xiaoyao-skins create moon-rabbit
+npx --yes --package=https://github.com/147228/dsh-xiaoyao-skins/releases/latest/download/xiaoyao-skin-kit.tgz xiaoyao-skin create moon-rabbit
 cd dsh-skin-moon-rabbit
 pnpm install
 pnpm check
@@ -79,7 +79,7 @@ pnpm check
 授权文件。做好后运行合集医生：
 
 ```bash
-npx --yes github:147228/dsh-xiaoyao-skins doctor ./dsh-skin-moon-rabbit
+npx --yes --package=https://github.com/147228/dsh-xiaoyao-skins/releases/latest/download/xiaoyao-skin-kit.tgz xiaoyao-skin doctor ./dsh-skin-moon-rabbit
 ```
 
 然后从 [皮肤提案](https://github.com/147228/dsh-xiaoyao-skins/issues/new?template=skin_proposal.yml)

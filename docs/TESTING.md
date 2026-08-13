@@ -6,7 +6,7 @@
 corepack enable
 pnpm install
 pnpm check
-npx --yes github:147228/dsh-xiaoyao-skins doctor .
+npx --yes --package=https://github.com/147228/dsh-xiaoyao-skins/releases/latest/download/xiaoyao-skin-kit.tgz xiaoyao-skin doctor .
 ```
 
 `doctor` 检查目录、元数据、官方 DSH 接线、CSS 作用域、生命周期、网络请求、功能服务

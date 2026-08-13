@@ -4,7 +4,7 @@
 阶段内嵌，安装后不依赖创作者的本机路径或远程图片服务。
 
 ```bash
-npx --yes github:147228/dsh-xiaoyao-skins use ocean
+npx --yes --package=https://github.com/147228/dsh-xiaoyao-skins/releases/latest/download/xiaoyao-skin-kit.tgz xiaoyao-skin use ocean
 ```
 
 皮肤以 `body[data-dsh-xiaoyao]` 隔离样式，并在停用时恢复背景、标题、favicon 和注入

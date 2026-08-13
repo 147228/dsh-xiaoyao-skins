@@ -4,7 +4,7 @@
 接入 Web profile，只改变浏览器表现层。
 
 ```bash
-npx --yes github:147228/dsh-xiaoyao-skins use black-whale
+npx --yes --package=https://github.com/147228/dsh-xiaoyao-skins/releases/latest/download/xiaoyao-skin-kit.tgz xiaoyao-skin use black-whale
 ```
 
 特点：背景透传、局部阅读底色、浅底文字对比度保护、专注模式、完整 dispose 回滚。

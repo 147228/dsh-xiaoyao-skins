@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.1.1 - 2026-08-14
+
+- 修复 npm/npx 安装后通过软链接调用 CLI 会静默退出的问题；
+- 一行命令改用 14 KB Release 工具包，不再拉取完整素材仓库。
+
 ## 0.1.0 - 2026-08-14
 
 - 首发六套真实 DeepSeek Harness Web profile 皮肤；

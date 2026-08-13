@@ -8,6 +8,7 @@ const skinsDir = join(root, 'packages', 'skins')
 const catalogPath = join(root, 'catalog', 'skins.json')
 const check = process.argv.includes('--check')
 const collection = JSON.parse(readFileSync(join(root, 'package.json'), 'utf8'))
+const installer = 'npx --yes --package=https://github.com/147228/dsh-xiaoyao-skins/releases/latest/download/xiaoyao-skin-kit.tgz xiaoyao-skin'
 
 const requiredText = ['id', 'name', 'nameEn', 'author', 'tagline', 'description', 'accent', 'bodyAttr', 'package', 'version']
 const entries = []
@@ -45,7 +46,7 @@ for (const slug of readdirSync(skinsDir).sort()) {
     preview: `packages/skins/${slug}/${skin.preview.dark}`,
     releaseAsset,
     source: `https://github.com/147228/dsh-xiaoyao-skins/releases/latest/download/${releaseAsset}`,
-    install: `npx --yes github:147228/dsh-xiaoyao-skins use ${slug}`,
+    install: `${installer} use ${slug}`,
     order: Number.isFinite(skin.order) ? skin.order : 1000,
   })
 }
