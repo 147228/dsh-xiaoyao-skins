@@ -8,6 +8,7 @@ const site = join(root, 'site')
 const catalog = JSON.parse(readFileSync(join(root, 'catalog', 'skins.json'), 'utf8'))
 rmSync(site, { recursive: true, force: true })
 mkdirSync(join(site, 'previews'), { recursive: true })
+mkdirSync(join(site, 'assets'), { recursive: true })
 
 const published = structuredClone(catalog)
 for (const skin of published.skins) {
@@ -19,6 +20,7 @@ for (const skin of published.skins) {
 cpSync(join(root, 'gallery', 'index.html'), join(site, 'index.html'))
 cpSync(join(root, 'gallery', 'styles.css'), join(site, 'styles.css'))
 cpSync(join(root, 'gallery', 'app.js'), join(site, 'app.js'))
+cpSync(join(root, 'gallery', 'assets'), join(site, 'assets'), { recursive: true })
 writeFileSync(join(site, 'catalog.json'), `${JSON.stringify(published, null, 2)}\n`)
 writeFileSync(join(site, '.nojekyll'), '')
 console.log(`[gallery] built ${published.skins.length} cards in site/`)

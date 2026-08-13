@@ -3,35 +3,57 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="夕小瑶 DeepSeek Harness Web 皮肤合集与创作者入口">
+  <meta name="theme-color" content="#08080b">
+  <meta name="description" content="六套接入真实 DeepSeek Harness Web profile 的夕小瑶社区皮肤">
   <title>夕小瑶 DSH 皮肤馆</title>
+  <link rel="icon" href="assets/xiaoyao-avatar.jpg">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="ambient ambient-a"></div><div class="ambient ambient-b"></div>
+  <a class="skip-link" href="#skins">跳到皮肤展厅</a>
   <header class="nav">
-    <a class="brand" href="./"><span class="mark">鲸</span><span><strong>夕小瑶 DSH 皮肤馆</strong><small>PRESENTATION LAYER ONLY</small></span></a>
-    <nav><a href="#skins">皮肤</a><a href="#create">创作</a><a href="https://github.com/147228/dsh-xiaoyao-skins">GitHub ↗</a></nav>
+    <a class="brand" href="./">
+      <img src="assets/xiaoyao-avatar.jpg" alt="夕小瑶" width="48" height="48">
+      <span><strong>夕小瑶 DSH 皮肤馆</strong><small>XIAOYAO × DEEPSEEK HARNESS</small></span>
+    </a>
+    <nav aria-label="主导航"><a href="#skins">皮肤库</a><a href="#create">创作</a><a href="#license">许可协议</a><a href="https://github.com/147228/dsh-xiaoyao-skins">GitHub ↗</a></nav>
   </header>
   <main>
     <section class="hero">
-      <p class="eyebrow">DEEPSEEK HARNESS · COMMUNITY SKINS</p>
-      <h1>换一套界面，<br><span>不换掉你的工作流。</span></h1>
-      <p class="lede">所有皮肤只进入 DSH Web 表现层。会话、模型、工具、沙箱、权限与项目数据仍由原生 Harness 提供。</p>
-      <div class="hero-actions"><a class="primary" href="#skins">挑一套皮肤</a><a class="secondary" href="#create">提交我的设计</a></div>
-      <div class="proof"><span>6 套首发皮肤</span><span>三平台 CI</span><span>可完整回滚</span><span>零运行时网络请求</span></div>
+      <div class="hero-copy">
+        <p class="eyebrow">DEEPSEEK HARNESS · COMMUNITY SKINS</p>
+        <h1>换一套界面，<br><span>不换掉你的工作流。</span></h1>
+        <p class="lede">六套皮肤接入真实 DSH Web profile，只改变表现层。会话、模型、工具、沙箱、权限与项目数据仍由原生 Harness 提供。</p>
+        <div class="hero-actions"><a class="primary" href="#skins">浏览全部皮肤</a><button class="secondary" data-copy="npx --yes --package=https://github.com/147228/dsh-xiaoyao-skins/releases/latest/download/xiaoyao-skin-kit.tgz xiaoyao-skin use black-whale">一键安装 · 复制命令</button></div>
+        <div class="hero-command"><small>INSTALL</small><code>xiaoyao-skin use black-whale</code><button aria-label="复制黑鲸实验室安装命令" data-copy="npx --yes --package=https://github.com/147228/dsh-xiaoyao-skins/releases/latest/download/xiaoyao-skin-kit.tgz xiaoyao-skin use black-whale">复制</button></div>
+      </div>
+      <a class="hero-visual" href="#skin-xiaoyao-black-whale" aria-label="查看黑鲸实验室皮肤">
+        <img src="previews/black-whale.jpg" alt="黑鲸实验室接入真实 DeepSeek Harness Web profile 后的效果" width="1502" height="744">
+        <span class="hero-visual-label"><b>BLACK WHALE LAB</b><small>REAL WEB PROFILE · SKIN 02</small></span>
+        <span class="hero-visual-state">● 实机运行</span>
+      </a>
+    </section>
+    <section id="license" class="license-strip" aria-labelledby="license-title">
+      <div class="license-title"><div><p class="eyebrow">LICENSE &amp; PROVENANCE</p><h2 id="license-title">许可与来源，一次说清</h2></div></div>
+      <div class="license-items">
+        <div><b>原创代码 · MIT</b><span>可使用、修改与合并；须保留 MIT 声明</span></div>
+        <div><b>衍生构建 · BSD-3-Clause</b><span>源自 zhu1090093659/dsh-web-ui；保留原作者版权</span></div>
+        <div><b>小瑶美术 · CC BY-NC 4.0</b><span>署名、非商业使用；商用须另行书面授权</span></div>
+        <div><b>独立社区项目</b><span>非 DeepSeek 官方产品，不代表任何第三方背书</span></div>
+      </div>
+      <a href="https://github.com/147228/dsh-xiaoyao-skins#版权与使用边界">查看完整说明</a>
     </section>
     <section id="skins" class="section">
-      <div class="section-head"><div><p class="eyebrow">CURATED COLLECTION</p><h2>选择你的工作台</h2></div><input id="search" type="search" placeholder="搜索名称、作者或标签…" aria-label="搜索皮肤"></div>
+      <div class="section-head"><div><p class="eyebrow">CURATED COLLECTION · 6 SKINS</p><h2>六套真实工作台</h2><p>所有预览均来自真实 DSH Web profile，所见即可安装。</p></div><label class="search"><span>搜索</span><input id="search" type="search" placeholder="名称、作者或标签…" aria-label="搜索皮肤"></label></div>
       <div id="skin-grid" class="grid" aria-live="polite"></div>
     </section>
     <section id="create" class="creator">
-      <div><p class="eyebrow">ONE COMMAND TO START</p><h2>你也可以做一套</h2><p>脚手架自带 DSH bundle、CSS 隔离、生命周期回滚测试、素材声明和提交前 doctor。设计从空白开始，安全边界不用重造。</p></div>
-      <div class="command"><code>npx --yes --package=https://github.com/147228/dsh-xiaoyao-skins/releases/latest/download/xiaoyao-skin-kit.tgz xiaoyao-skin create my-skin</code><button data-copy="npx --yes --package=https://github.com/147228/dsh-xiaoyao-skins/releases/latest/download/xiaoyao-skin-kit.tgz xiaoyao-skin create my-skin">复制</button></div>
-      <a class="text-link" href="https://github.com/147228/dsh-xiaoyao-skins/blob/main/CONTRIBUTING.md">阅读贡献规范 →</a>
+      <img src="assets/xiaoyao-avatar.jpg" alt="夕小瑶" width="180" height="180">
+      <div><p class="eyebrow">ONE COMMAND TO START</p><h2>做你的专属界面</h2><p>脚手架自带真实 DSH bundle 接线、CSS 隔离、回滚测试、素材声明和提交前 doctor。能力边界已经准备好，灵感可以从空白开始。</p><a class="text-link" href="https://github.com/147228/dsh-xiaoyao-skins/blob/main/CONTRIBUTING.md">阅读创作与贡献规范</a></div>
+      <div class="creator-action"><div class="command"><code>xiaoyao-skin create my-skin</code><button data-copy="npx --yes --package=https://github.com/147228/dsh-xiaoyao-skins/releases/latest/download/xiaoyao-skin-kit.tgz xiaoyao-skin create my-skin">复制</button></div><small>创建、验证、提交，一条工具链完成</small></div>
     </section>
   </main>
-  <footer><span>夕小瑶科技说 · Community project</span><span>Code MIT · Artwork per asset declaration</span></footer>
+  <footer><span>夕小瑶科技说 · Independent community project</span><span>Code MIT · Build support BSD-3-Clause · Artwork CC BY-NC 4.0</span></footer>
   <div id="toast" role="status" aria-live="polite"></div>
   <script type="module" src="app.js"></script>
 </body>

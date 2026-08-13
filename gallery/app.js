@@ -14,11 +14,12 @@ function escape(value) {
 
 function card(skin, index) {
   const tags = skin.tags.map((tag) => `<span>${escape(tag)}</span>`).join('')
-  return `<article class="card" style="--accent:${escape(skin.accent)};--delay:${index * 45}ms">
-    <div class="preview"><img src="${escape(skin.preview)}" alt="${escape(skin.name)} 预览" loading="lazy"><span class="verified">VERIFIED</span></div>
+  const featured = index === 0 ? ' card-featured' : ''
+  return `<article id="skin-${escape(skin.id)}" class="card${featured}" style="--accent:${escape(skin.accent)};--delay:${index * 45}ms">
+    <div class="preview"><img src="${escape(skin.preview)}" alt="${escape(skin.name)}接入真实 DeepSeek Harness Web profile 后的效果" loading="${index < 3 ? 'eager' : 'lazy'}"><span class="verified">REAL PROFILE</span></div>
     <div class="card-body"><div class="meta"><span>NO. ${String(index + 1).padStart(2, '0')}</span><span>v${escape(skin.version)}</span></div>
     <h3>${escape(skin.name)}</h3><p class="tagline">${escape(skin.tagline)}</p><p class="description">${escape(skin.description)}</p>
-    <div class="tags">${tags}</div><div class="install"><code>${escape(skin.install)}</code><button data-copy="${escape(skin.install)}">复制命令</button></div></div>
+    <div class="tags">${tags}</div><div class="install"><code>xiaoyao-skin use ${escape(skin.slug)}</code><button data-copy="${escape(skin.install)}">复制安装命令</button></div></div>
   </article>`
 }
 
@@ -35,9 +36,15 @@ async function copy(text) {
   setTimeout(() => toast.classList.remove('show'), 1300)
 }
 
+function onCopyFailure() {
+  toast.textContent = '复制失败，请手动选择命令'
+  toast.classList.add('show')
+  setTimeout(() => toast.classList.remove('show'), 1800)
+}
+
 document.addEventListener('click', (event) => {
   const button = event.target.closest('[data-copy]')
-  if (button) copy(button.dataset.copy).catch(() => { toast.textContent = '复制失败，请手动选择命令' })
+  if (button) copy(button.dataset.copy).catch(onCopyFailure)
 })
 search.addEventListener('input', () => render(search.value))
 render()
