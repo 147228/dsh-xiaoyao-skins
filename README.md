@@ -50,18 +50,26 @@ npx --yes --package=https://github.com/147228/dsh-xiaoyao-skins/releases/latest/
 
 可用 `--profile <name>` 指定其他 profile，用 `--dry-run` 只查看将执行的 DSH 命令。
 
-## 首发皮肤
+## 六套真实效果
 
-| 皮肤 | 视觉方向 | 命令 |
-| --- | --- | --- |
-| [黑鲸实验室](packages/skins/black-whale) | 官网黑鲸 × 石墨黑 × 小瑶粉 | `use black-whale` |
-| [探索之境](packages/skins/ocean) | 深海蓝 × 猫娘粉 × 鲸鱼光效 | `use ocean` |
-| [晴空研究所](packages/skins/sky-lab) | 云端白昼 × 双主角协作 | `use sky-lab` |
-| [烽火夜长城](packages/skins/great-wall-beacon) | 炭黑长城 × 中国红 × 古金 | `use great-wall-beacon` |
-| [山河朝霞](packages/skins/great-wall-sunrise) | 米白宣纸 × 朱红 × 朝霞金 | `use great-wall-sunrise` |
-| [雪岭长城](packages/skins/great-wall-snow) | 雪白 × 墨灰 × 正红披风 | `use great-wall-snow` |
+以下均为皮肤接入**真实 DeepSeek Harness Web profile** 后的界面截图，不是静态概念图。
+点击图片可进入对应皮肤目录；完整安装命令也可在
+[在线皮肤展厅](https://147228.github.io/dsh-xiaoyao-skins/) 一键复制。
 
-全部预览与可复制命令见 [在线皮肤展厅](https://147228.github.io/dsh-xiaoyao-skins/)。
+| [夕小瑶 · 黑鲸实验室](packages/skins/black-whale) | [夕小瑶 · 探索之境](packages/skins/ocean) |
+| :---: | :---: |
+| [![夕小瑶 · 黑鲸实验室真实 DSH Web profile 效果图](packages/skins/black-whale/preview/dark.jpg)](packages/skins/black-whale) | [![夕小瑶 · 探索之境真实 DSH Web profile 效果图](packages/skins/ocean/preview/dark.jpg)](packages/skins/ocean) |
+| 官网黑鲸 × 石墨黑 × 小瑶粉<br>`use black-whale` | 深海蓝 × 猫娘粉 × 鲸鱼光效<br>`use ocean` |
+
+| [蓝粉双子 · 晴空研究所](packages/skins/sky-lab) | [夕小瑶 · 烽火夜长城](packages/skins/great-wall-beacon) |
+| :---: | :---: |
+| [![蓝粉双子 · 晴空研究所真实 DSH Web profile 效果图](packages/skins/sky-lab/preview/dark.jpg)](packages/skins/sky-lab) | [![夕小瑶 · 烽火夜长城真实 DSH Web profile 效果图](packages/skins/great-wall-beacon/preview/dark.jpg)](packages/skins/great-wall-beacon) |
+| 云端白昼 × 双主角协作<br>`use sky-lab` | 炭黑长城 × 中国红 × 古金<br>`use great-wall-beacon` |
+
+| [夕小瑶 · 山河朝霞](packages/skins/great-wall-sunrise) | [夕小瑶 · 雪岭长城](packages/skins/great-wall-snow) |
+| :---: | :---: |
+| [![夕小瑶 · 山河朝霞真实 DSH Web profile 效果图](packages/skins/great-wall-sunrise/preview/dark.jpg)](packages/skins/great-wall-sunrise) | [![夕小瑶 · 雪岭长城真实 DSH Web profile 效果图](packages/skins/great-wall-snow/preview/dark.jpg)](packages/skins/great-wall-snow) |
+| 米白宣纸 × 朱红 × 朝霞金<br>`use great-wall-sunrise` | 雪白 × 墨灰 × 正红披风<br>`use great-wall-snow` |
 
 ## 为什么不影响 DSH 其他功能
 
