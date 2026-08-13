@@ -1,0 +1,24 @@
+name: 功能建议
+description: 提议工具链、展厅或规范改进
+title: "[Feature] "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: 想解决的问题
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: 建议方案
+    validations:
+      required: true
+  - type: checkboxes
+    id: scope
+    attributes:
+      label: 能力边界
+      options:
+        - label: 方案不会要求皮肤接管会话、模型、工具、沙箱或其他 DSH 功能
+          required: true

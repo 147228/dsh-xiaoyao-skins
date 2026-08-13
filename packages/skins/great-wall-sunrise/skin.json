@@ -1,0 +1,16 @@
+{
+  "id": "xiaoyao-great-wall-sunrise",
+  "name": "夕小瑶 · 山河朝霞",
+  "nameEn": "Xiaoyao Great Wall · Morning Glow",
+  "author": "夕小瑶科技说",
+  "tagline": "米白宣纸 × 朱红 × 朝霞金",
+  "description": "以水墨长城、朝霞和新中式小瑶为核心的明亮 DSH 工作台。",
+  "tags": ["xiaoyao", "great-wall", "chinese", "light"],
+  "accent": "#c92d27",
+  "bodyAttr": "data-dsh-great-wall-sunrise",
+  "package": "@xiaoyao-ai/dsh-client-ui-skin-great-wall-sunrise",
+  "version": "0.1.0",
+  "wiring": { "id": "ui-skin-great-wall-sunrise", "bundleWired": true },
+  "preview": { "dark": "preview/dark.png" },
+  "order": 12
+}

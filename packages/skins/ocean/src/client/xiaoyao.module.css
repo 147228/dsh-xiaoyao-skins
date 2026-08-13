@@ -1,0 +1,638 @@
+/* Xiaoyao Ocean Lab — a scoped, reversible DSH Web skin. */
+
+body[data-dsh-xiaoyao] {
+  --xy-navy-950: #030a1d;
+  --xy-navy-900: #07142f;
+  --xy-navy-800: #0c2450;
+  --xy-blue: #4f8cff;
+  --xy-cyan: #63e6ff;
+  --xy-pink: #ff79bd;
+  --xy-pink-strong: #f354a8;
+  --xy-white: #f8fbff;
+  --xy-line: rgba(140, 187, 255, 0.2);
+  --xy-glass: rgba(7, 20, 50, 0.64);
+  --xy-glass-strong: rgba(5, 15, 39, 0.84);
+  --dsw-font-family: 'PingFang SC', 'Microsoft YaHei', 'Inter', 'Segoe UI', sans-serif;
+  --ds-font-family-code: 'SF Mono', 'JetBrains Mono', 'Cascadia Code', Consolas, monospace;
+
+  --dsw-static-blue-50: #ecf4ff;
+  --dsw-static-blue-75: #e4efff;
+  --dsw-static-blue-100: #d7e7ff;
+  --dsw-static-blue-300: #9ec4ff;
+  --dsw-static-blue-400: #70a4ff;
+  --dsw-static-blue-450: #5a94ff;
+  --dsw-static-blue-500: #4f8cff;
+  --dsw-static-blue-600: #3971e8;
+  --dsw-static-blue-800: #194fae;
+  --dsw-static-blue-950: #09275f;
+  --dsw-static-deepseek-50: #f4ebff;
+  --dsw-static-deepseek-100: #f7dcf0;
+  --dsw-static-deepseek-200: #f6c6e4;
+  --dsw-static-deepseek-300: #f1a7d4;
+  --dsw-static-deepseek-400: #ff8bc7;
+  --dsw-static-deepseek-450: #ff79bd;
+  --dsw-static-deepseek-500: #f354a8;
+  --dsw-static-deepseek-600: #d93c8e;
+  --dsw-static-deepseek-800: #a1246a;
+  --dsw-static-deepseek-900: #741649;
+
+  --dsw-alias-bg-base: rgba(244, 249, 255, 0.76);
+  --dsw-alias-bg-layer-1: rgba(248, 251, 255, 0.78);
+  --dsw-alias-bg-layer-2: rgba(230, 241, 255, 0.76);
+  --dsw-alias-bg-layer-3: rgba(218, 233, 252, 0.82);
+  --dsw-alias-bg-overlay: rgba(247, 250, 255, 0.94);
+  --dsw-alias-border-l1: rgba(61, 102, 165, 0.14);
+  --dsw-alias-border-l2: rgba(61, 102, 165, 0.22);
+  --dsw-alias-border-l3: rgba(61, 102, 165, 0.32);
+  --dsw-alias-brand-primary: #ee5ba9;
+  --dsw-alias-brand-text: #b72f7a;
+  --dsw-alias-button-primary-fill: #ee5ba9;
+  --dsw-alias-button-primary-hover: #ff79bd;
+  --dsw-alias-button-primary-dimmed: #f7c7e1;
+  --dsw-alias-button-info-fill: #4f8cff;
+  --dsw-alias-button-info-hover: #70a4ff;
+  --dsw-alias-interactive-bg-hover: rgba(79, 140, 255, 0.09);
+  --dsw-alias-interactive-bg-active: rgba(255, 121, 189, 0.16);
+  --dsw-alias-label-primary: #102246;
+  --dsw-alias-label-secondary: #496284;
+  --dsw-alias-label-tertiary: #6f84a3;
+  --dsw-alias-label-caption: #899ab3;
+  --dsw-specific-sidebar-fill: rgba(8, 26, 62, 0.86);
+  --dsw-specific-sidebar-nav-item-active: rgba(255, 121, 189, 0.2);
+  --dsw-specific-sidebar-nav-item-active-accent: #ff79bd;
+  --dsw-specific-sidebar-nav-item-hover: rgba(255, 255, 255, 0.09);
+  --dsw-specific-input-major: rgba(255, 255, 255, 0.78);
+  --dsw-specific-bubble: rgba(231, 241, 255, 0.86);
+  --dsw-specific-bubble-highlight: rgba(247, 220, 240, 0.9);
+
+  min-height: 100vh;
+  padding: 62px 16px 16px;
+  box-sizing: border-box;
+  color: var(--dsw-alias-label-primary);
+  background-color: #dceaff;
+}
+
+body[data-dsh-xiaoyao][data-ds-dark-theme] {
+  --dsw-static-neutral-00: #06122d;
+  --dsw-static-neutral-50: #0a1938;
+  --dsw-static-neutral-100: #102245;
+  --dsw-static-neutral-150: #13294f;
+  --dsw-static-neutral-200: #17305a;
+  --dsw-static-neutral-300: #213e6d;
+  --dsw-static-neutral-500: #5475a4;
+  --dsw-static-neutral-700: #8ea9cc;
+  --dsw-static-neutral-900: #dce9ff;
+  --dsw-static-neutral-1000: #ffffff;
+  --dsw-alias-bg-base: rgba(3, 11, 29, 0.76);
+  --dsw-alias-bg-layer-1: rgba(7, 20, 50, 0.78);
+  --dsw-alias-bg-layer-2: rgba(12, 36, 80, 0.72);
+  --dsw-alias-bg-layer-3: rgba(18, 48, 96, 0.82);
+  --dsw-alias-bg-overlay: rgba(6, 17, 42, 0.96);
+  --dsw-alias-border-l1: rgba(140, 187, 255, 0.14);
+  --dsw-alias-border-l2: rgba(140, 187, 255, 0.22);
+  --dsw-alias-border-l3: rgba(140, 187, 255, 0.34);
+  --dsw-alias-brand-primary: #ff83c2;
+  --dsw-alias-brand-text: #ffacd7;
+  --dsw-alias-button-primary-fill: #f354a8;
+  --dsw-alias-button-primary-hover: #ff79bd;
+  --dsw-alias-button-primary-dimmed: #713258;
+  --dsw-alias-button-info-fill: #3971e8;
+  --dsw-alias-button-info-hover: #4f8cff;
+  --dsw-alias-interactive-bg-hover: rgba(99, 230, 255, 0.08);
+  --dsw-alias-interactive-bg-active: rgba(255, 121, 189, 0.18);
+  --dsw-alias-label-primary: #eef5ff;
+  --dsw-alias-label-secondary: #b6c8e6;
+  --dsw-alias-label-tertiary: #8da4c8;
+  --dsw-alias-label-caption: #6f86ab;
+  --dsw-specific-sidebar-fill: rgba(3, 11, 30, 0.88);
+  --dsw-specific-sidebar-nav-item-active: rgba(255, 121, 189, 0.2);
+  --dsw-specific-sidebar-nav-item-active-accent: #ff79bd;
+  --dsw-specific-sidebar-nav-item-hover: rgba(99, 230, 255, 0.08);
+  --dsw-specific-input-major: rgba(5, 17, 45, 0.78);
+  --dsw-specific-bubble: rgba(16, 43, 88, 0.86);
+  --dsw-specific-bubble-highlight: rgba(84, 35, 76, 0.86);
+  color: #eef5ff;
+  background-color: #030a1d;
+}
+
+body[data-dsh-xiaoyao] [id='root'] {
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+  min-height: calc(100vh - 78px);
+  border: 1px solid rgba(108, 156, 225, 0.28);
+  border-radius: 22px;
+  background: linear-gradient(135deg, rgba(250, 253, 255, 0.56), rgba(232, 243, 255, 0.3));
+  box-shadow: 0 24px 70px rgba(12, 39, 83, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(12px) saturate(120%);
+  -webkit-backdrop-filter: blur(12px) saturate(120%);
+}
+
+body[data-dsh-xiaoyao][data-ds-dark-theme] [id='root'] {
+  border-color: rgba(118, 166, 255, 0.18);
+  background: linear-gradient(135deg, rgba(4, 13, 35, 0.56), rgba(7, 28, 67, 0.28));
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.52), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+body[data-dsh-xiaoyao] [data-pane='sidebar'] {
+  background: linear-gradient(180deg, rgba(4, 18, 47, 0.91), rgba(8, 31, 67, 0.78));
+  border-right: 1px solid rgba(123, 175, 255, 0.18);
+  box-shadow: 14px 0 40px rgba(2, 10, 29, 0.18);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+body[data-dsh-xiaoyao] [data-pane='sidebar'] * {
+  text-shadow: 0 1px 16px rgba(0, 0, 0, 0.16);
+}
+
+body[data-dsh-xiaoyao] [data-pane='conversation'] {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: linear-gradient(90deg, rgba(246, 250, 255, 0.58), rgba(239, 247, 255, 0.36) 74%, rgba(255, 255, 255, 0.1));
+}
+
+body[data-dsh-xiaoyao][data-ds-dark-theme] [data-pane='conversation'] {
+  background: linear-gradient(90deg, rgba(3, 11, 29, 0.34), rgba(7, 22, 52, 0.18) 68%, rgba(4, 13, 35, 0.03));
+}
+
+/* Put the IP inside the usable conversation canvas instead of leaving it
+   behind the details rail. The left fade protects messages and the composer. */
+body[data-dsh-xiaoyao] [data-pane='conversation']::before {
+  position: absolute;
+  z-index: -1;
+  right: clamp(-88px, -3vw, -28px);
+  bottom: clamp(-130px, -7vh, -48px);
+  width: clamp(420px, 42vw, 690px);
+  aspect-ratio: 849 / 960;
+  background-image: var(--dsh-xiaoyao-guide);
+  background-position: right bottom;
+  background-size: contain;
+  background-repeat: no-repeat;
+  filter: saturate(1.08) drop-shadow(0 22px 50px rgba(0, 0, 0, 0.34));
+  opacity: 0.82;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.36) 16%, #000 38%);
+  mask-image: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.36) 16%, #000 38%);
+  pointer-events: none;
+  content: '';
+}
+
+body[data-dsh-xiaoyao] [data-pane='conversation'] > div > header,
+body[data-dsh-xiaoyao] [data-pane='details'] {
+  border-color: var(--dsw-alias-border-l1);
+  background: color-mix(in srgb, var(--dsw-alias-bg-layer-1) 82%, transparent);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+body[data-dsh-xiaoyao] [role='dialog'] {
+  overflow: hidden;
+  border: 1px solid var(--dsw-alias-border-l2);
+  border-radius: 20px;
+  background: var(--dsw-alias-bg-overlay);
+  box-shadow: 0 26px 90px rgba(1, 9, 27, 0.42);
+  backdrop-filter: blur(26px) saturate(125%);
+  -webkit-backdrop-filter: blur(26px) saturate(125%);
+}
+
+body[data-dsh-xiaoyao] button,
+body[data-dsh-xiaoyao] input,
+body[data-dsh-xiaoyao] textarea {
+  transition: border-color 160ms ease, background-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+}
+
+body[data-dsh-xiaoyao] button:focus-visible,
+body[data-dsh-xiaoyao] input:focus-visible,
+body[data-dsh-xiaoyao] textarea:focus-visible {
+  outline: 2px solid rgba(255, 121, 189, 0.9);
+  outline-offset: 2px;
+}
+
+body[data-dsh-xiaoyao] textarea:focus,
+body[data-dsh-xiaoyao] input:focus {
+  border-color: rgba(255, 121, 189, 0.58);
+  box-shadow: 0 0 0 3px rgba(255, 121, 189, 0.1), 0 12px 36px rgba(12, 45, 92, 0.12);
+}
+
+body[data-dsh-xiaoyao] ::selection {
+  color: #fff;
+  background: rgba(238, 91, 169, 0.72);
+}
+
+.brandbar {
+  position: fixed;
+  z-index: 2147483000;
+  top: 10px;
+  left: 26px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 42px;
+  color: #eff6ff;
+  user-select: none;
+  pointer-events: none;
+}
+
+.brandMark {
+  width: 38px;
+  height: 38px;
+  object-fit: cover;
+  border: 1px solid rgba(255, 255, 255, 0.54);
+  border-radius: 50%;
+  box-shadow: 0 0 24px rgba(93, 151, 255, 0.36);
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.brandbar > div {
+  display: grid;
+  gap: 1px;
+}
+
+.brandbar strong {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.brandbar div span {
+  color: rgba(222, 234, 255, 0.68);
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.livePill {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 8px;
+  padding: 5px 9px 4px;
+  border: 1px solid rgba(99, 230, 255, 0.25);
+  border-radius: 999px;
+  color: #9af2ff;
+  background: rgba(6, 24, 58, 0.58);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  font: 700 9px/1 var(--ds-font-family-code);
+  letter-spacing: 0.12em;
+}
+
+.livePill::before {
+  width: 5px;
+  height: 5px;
+  margin-right: 6px;
+  border-radius: 50%;
+  background: #69f0c4;
+  box-shadow: 0 0 10px #69f0c4;
+  content: '';
+}
+
+.guideLauncher {
+  position: fixed;
+  z-index: 2147483001;
+  right: 28px;
+  bottom: 27px;
+  display: grid;
+  place-items: center;
+  width: 58px;
+  height: 58px;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.48);
+  border-radius: 50%;
+  background: rgba(246, 250, 255, 0.9);
+  box-shadow: 0 14px 40px rgba(3, 12, 32, 0.32), 0 0 0 5px rgba(91, 147, 255, 0.1);
+  cursor: pointer;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.guideLauncher:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 18px 48px rgba(3, 12, 32, 0.4), 0 0 0 6px rgba(255, 121, 189, 0.14);
+}
+
+.launcherMark {
+  width: 62px;
+  height: 62px;
+  object-fit: cover;
+}
+
+.guideCard {
+  position: fixed;
+  z-index: 2147483002;
+  right: 28px;
+  bottom: 99px;
+  width: min(360px, calc(100vw - 32px));
+  height: 430px;
+  overflow: hidden;
+  border: 1px solid rgba(139, 181, 255, 0.3);
+  border-radius: 24px;
+  color: #f3f7ff;
+  background:
+    radial-gradient(circle at 64% 12%, rgba(255, 121, 189, 0.25), transparent 34%),
+    linear-gradient(155deg, rgba(6, 18, 47, 0.96), rgba(9, 37, 78, 0.92));
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.52), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  transform-origin: bottom right;
+  transition: opacity 180ms ease, transform 180ms ease, visibility 180ms ease;
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+}
+
+.guideCard::before {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(131, 194, 255, 0.34) 0 1px, transparent 1.5px);
+  background-size: 28px 28px;
+  opacity: 0.24;
+  content: '';
+}
+
+.guideCardHidden {
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(12px) scale(0.96);
+  pointer-events: none;
+}
+
+.guideClose {
+  position: absolute;
+  z-index: 3;
+  top: 14px;
+  right: 14px;
+  display: grid;
+  place-items: center;
+  width: 31px;
+  height: 31px;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 50%;
+  color: #e5eeff;
+  background: rgba(4, 13, 35, 0.54);
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.guideArt {
+  position: absolute;
+  z-index: 1;
+  right: -52px;
+  bottom: -34px;
+  width: 315px;
+  height: auto;
+  filter: drop-shadow(0 18px 38px rgba(0, 0, 0, 0.34));
+}
+
+.guideCopy {
+  position: absolute;
+  z-index: 2;
+  top: 32px;
+  left: 26px;
+  display: grid;
+  width: 180px;
+  gap: 8px;
+}
+
+.guideCopy > span {
+  color: #77e9ff;
+  font: 700 10px/1 var(--ds-font-family-code);
+  letter-spacing: 0.18em;
+}
+
+.guideCopy > strong {
+  font-size: 22px;
+  line-height: 1.25;
+}
+
+.guideCopy p {
+  margin: 0;
+  color: rgba(223, 235, 255, 0.7);
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+@media (max-width: 900px) {
+  body[data-dsh-xiaoyao] {
+    padding: 54px 8px 8px;
+    background-position: 66% center !important;
+  }
+
+  body[data-dsh-xiaoyao] [id='root'] {
+    min-height: calc(100vh - 62px);
+    border-radius: 17px;
+  }
+
+  body[data-dsh-xiaoyao] [data-pane='conversation']::before {
+    right: -118px;
+    bottom: -66px;
+    width: min(470px, 108vw);
+    opacity: 0.48;
+    -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.18) 25%, #000 54%);
+    mask-image: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.18) 25%, #000 54%);
+  }
+
+  .brandbar {
+    left: 15px;
+  }
+
+  .brandbar div,
+  .livePill {
+    display: none;
+  }
+
+  .guideLauncher {
+    right: 18px;
+    bottom: 18px;
+    width: 50px;
+    height: 50px;
+  }
+
+  .guideCard {
+    right: 16px;
+    bottom: 82px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body[data-dsh-xiaoyao] *,
+  .guideCard {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Immersive stage pass ----------------------------------------------------
+   DSH keeps its real layout and event tree. Only the large structural panes
+   become transparent; text, composer, menus, dialogs and message bubbles keep
+   their own readable glass surfaces. */
+
+body[data-dsh-xiaoyao] {
+  --dsw-static-neutral-00: #06122d;
+  --dsw-static-neutral-50: #0a1938;
+  --dsw-static-neutral-100: #102245;
+  --dsw-static-neutral-150: #13294f;
+  --dsw-static-neutral-200: #17305a;
+  --dsw-static-neutral-300: #294876;
+  --dsw-static-neutral-500: #6582aa;
+  --dsw-static-neutral-700: #b4c7e3;
+  --dsw-static-neutral-900: #eaf2ff;
+  --dsw-static-neutral-1000: #ffffff;
+  --dsw-alias-bg-base: rgba(3, 11, 29, 0.24);
+  --dsw-alias-bg-layer-1: rgba(6, 18, 46, 0.68);
+  --dsw-alias-bg-layer-2: rgba(10, 31, 69, 0.68);
+  --dsw-alias-bg-layer-3: rgba(17, 44, 88, 0.8);
+  --dsw-alias-bg-overlay: rgba(5, 15, 39, 0.94);
+  --dsw-alias-label-primary: #f3f7ff;
+  --dsw-alias-label-secondary: #c4d4ec;
+  --dsw-alias-label-tertiary: #91a9cb;
+  --dsw-alias-label-caption: #748db3;
+  --dsw-specific-sidebar-fill: rgba(3, 13, 37, 0.78);
+  --dsw-specific-input-major: rgba(5, 16, 43, 0.82);
+  --dsw-specific-bubble: rgba(12, 35, 76, 0.88);
+  --dsw-specific-bubble-highlight: rgba(79, 34, 73, 0.88);
+}
+
+body[data-dsh-xiaoyao] [id='root'] {
+  z-index: 1;
+  border-color: rgba(126, 174, 255, 0.34);
+  background: rgba(2, 9, 27, 0.08);
+  box-shadow:
+    0 26px 90px rgba(0, 0, 0, 0.5),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.035),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+/* DSH 0.1 keeps readable semantic suffixes on its CSS-module classes. These
+   selectors touch structural columns only and do not replace app components. */
+body[data-dsh-xiaoyao] [class*='_frame'],
+body[data-dsh-xiaoyao] [class*='_centerCol'],
+body[data-dsh-xiaoyao] [class*='_scrollBody'] {
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+body[data-dsh-xiaoyao] [class*='_centerCol'] > [class*='_root'] {
+  background: linear-gradient(90deg, rgba(2, 10, 31, 0.18), rgba(4, 15, 42, 0.06) 50%, rgba(4, 12, 33, 0.12)) !important;
+}
+
+body[data-dsh-xiaoyao] [class*='_sidebarCol'],
+body[data-dsh-xiaoyao] [class*='_sidebarCol'] > [class*='_root'] {
+  background: linear-gradient(180deg, rgba(3, 13, 38, 0.9), rgba(5, 22, 53, 0.78)) !important;
+  box-shadow: 14px 0 44px rgba(0, 0, 0, 0.26);
+  backdrop-filter: blur(18px) saturate(112%);
+  -webkit-backdrop-filter: blur(18px) saturate(112%);
+}
+
+body[data-dsh-xiaoyao] [class*='_detailsCol'] > [class*='_root'] {
+  background: rgba(3, 13, 38, 0.78) !important;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+/* The real native composer becomes the central floating command console. */
+body[data-dsh-xiaoyao] textarea[class*='_input'] {
+  color: #f5f8ff;
+  text-shadow: 0 1px 16px rgba(0, 0, 0, 0.28);
+}
+
+body[data-dsh-xiaoyao] textarea[class*='_input']::placeholder {
+  color: rgba(202, 218, 242, 0.66);
+}
+
+body[data-dsh-xiaoyao] textarea[class*='_input']
+  :where(*) {
+  color: inherit;
+}
+
+body[data-dsh-xiaoyao] [class*='_composerStack'] [class*='_card'] {
+  border-color: rgba(174, 204, 255, 0.42) !important;
+  color: #edf5ff;
+  background: linear-gradient(145deg, rgba(4, 15, 42, 0.9), rgba(8, 30, 68, 0.76)) !important;
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.42),
+    0 0 0 1px rgba(255, 255, 255, 0.055) inset,
+    0 0 34px rgba(75, 133, 255, 0.1);
+  backdrop-filter: blur(18px) saturate(125%);
+  -webkit-backdrop-filter: blur(18px) saturate(125%);
+}
+
+body[data-dsh-xiaoyao] [class*='_composerStack'] {
+  width: min(680px, calc(100% - 32px)) !important;
+  max-width: 680px !important;
+}
+
+body[data-dsh-xiaoyao] [class*='_composerStack'] > [class*='_root'] {
+  width: 100% !important;
+}
+
+body[data-dsh-xiaoyao] button[class*='_newSession'] {
+  border: 1px solid rgba(151, 190, 255, 0.38) !important;
+  color: #f4f8ff !important;
+  background: linear-gradient(180deg, rgba(12, 38, 83, 0.9), rgba(7, 25, 61, 0.86)) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 8px 24px rgba(0, 0, 0, 0.18);
+}
+
+body[data-dsh-xiaoyao] button[class*='_newSession']:hover {
+  border-color: rgba(255, 132, 197, 0.62) !important;
+  background: linear-gradient(180deg, rgba(42, 39, 92, 0.94), rgba(24, 29, 75, 0.9)) !important;
+}
+
+body[data-dsh-xiaoyao] button[class*='_add'] {
+  border-color: rgba(148, 188, 255, 0.28) !important;
+  color: #eaf3ff !important;
+  background: rgba(17, 43, 87, 0.86) !important;
+}
+
+body[data-dsh-xiaoyao] [class*='_heroGlow'] {
+  opacity: 0.18;
+}
+
+.stageCharacter {
+  position: fixed;
+  z-index: 0;
+  left: clamp(130px, 13vw, 250px);
+  bottom: -6vh;
+  width: clamp(480px, 45vw, 780px);
+  max-height: 96vh;
+  object-fit: contain;
+  object-position: left bottom;
+  opacity: 0.96;
+  filter:
+    brightness(1.1)
+    saturate(1.08)
+    contrast(1.04)
+    drop-shadow(0 28px 48px rgba(0, 0, 0, 0.46))
+    drop-shadow(0 0 24px rgba(104, 159, 255, 0.18));
+  pointer-events: none;
+  user-select: none;
+}
+
+@media (max-width: 1100px) {
+  .stageCharacter {
+    left: 150px;
+    width: min(520px, 52vw);
+    opacity: 0.88;
+  }
+
+  body[data-dsh-xiaoyao] [class*='_centerCol'] > [class*='_root'] {
+    background: rgba(2, 10, 30, 0.12) !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .stageCharacter {
+    left: -80px;
+    width: 380px;
+    opacity: 0.26;
+    -webkit-mask-image: linear-gradient(90deg, #000, transparent 82%);
+    mask-image: linear-gradient(90deg, #000, transparent 82%);
+  }
+
+  body[data-dsh-xiaoyao] [class*='_composerStack'] [class*='_card'] {
+    background: rgba(4, 15, 42, 0.9) !important;
+  }
+}

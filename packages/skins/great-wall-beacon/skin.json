@@ -1,0 +1,16 @@
+{
+  "id": "xiaoyao-great-wall-beacon",
+  "name": "夕小瑶 · 烽火夜长城",
+  "nameEn": "Xiaoyao Great Wall · Beacon Night",
+  "author": "夕小瑶科技说",
+  "tagline": "炭黑长城 × 中国红 × 古金烽火",
+  "description": "以夜色长城、烽火金光和中国红为核心的沉浸式深色 DSH 主题。",
+  "tags": ["xiaoyao", "great-wall", "night", "dark"],
+  "accent": "#d83a30",
+  "bodyAttr": "data-dsh-great-wall-beacon",
+  "package": "@xiaoyao-ai/dsh-client-ui-skin-great-wall-beacon",
+  "version": "0.1.0",
+  "wiring": { "id": "ui-skin-great-wall-beacon", "bundleWired": true },
+  "preview": { "dark": "preview/dark.png" },
+  "order": 11
+}

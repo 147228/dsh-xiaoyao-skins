@@ -1,0 +1,3 @@
+- insert:
+    - id: ui-skin-xiaoyao
+      name: '@xiaoyao-ai/dsh-client-ui-skin-xiaoyao'

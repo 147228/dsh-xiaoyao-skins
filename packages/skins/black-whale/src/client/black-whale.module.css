@@ -1,0 +1,372 @@
+/* Black Whale Lab — a monochrome, flat DSH skin with one Xiaoyao-pink signal. */
+
+body[data-dsh-black-whale] {
+  --bw-black: #030304;
+  --bw-panel: rgba(9, 9, 11, 0.8);
+  --bw-panel-strong: rgba(7, 7, 9, 0.94);
+  --bw-line: rgba(255, 255, 255, 0.13);
+  --bw-line-strong: rgba(255, 255, 255, 0.22);
+  --bw-white: #f4f4f5;
+  --bw-muted: #a1a1aa;
+  --bw-pink: #ff6fb6;
+  --bw-pink-soft: rgba(255, 111, 182, 0.14);
+  --dsw-font-family: 'Inter', 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif;
+  --ds-font-family-code: 'SF Mono', 'JetBrains Mono', 'Cascadia Code', Consolas, monospace;
+
+  --dsw-static-blue-50: #1b1b1e;
+  --dsw-static-blue-75: #202024;
+  --dsw-static-blue-100: #29292e;
+  --dsw-static-blue-300: #5b5b63;
+  --dsw-static-blue-400: #777781;
+  --dsw-static-blue-450: #92929d;
+  --dsw-static-blue-500: #b1b1ba;
+  --dsw-static-blue-600: #d1d1d6;
+  --dsw-static-blue-800: #ededee;
+  --dsw-static-blue-950: #ffffff;
+  --dsw-static-deepseek-50: #29151f;
+  --dsw-static-deepseek-100: #402033;
+  --dsw-static-deepseek-200: #602b48;
+  --dsw-static-deepseek-300: #8e3c69;
+  --dsw-static-deepseek-400: #c64f8d;
+  --dsw-static-deepseek-450: #e85fa6;
+  --dsw-static-deepseek-500: #ff6fb6;
+  --dsw-static-deepseek-600: #ff8bc5;
+  --dsw-static-deepseek-800: #ffb8db;
+  --dsw-static-deepseek-900: #ffe0f0;
+  --dsw-static-neutral-00: #050506;
+  --dsw-static-neutral-50: #0c0c0e;
+  --dsw-static-neutral-100: #121214;
+  --dsw-static-neutral-150: #17171a;
+  --dsw-static-neutral-200: #1d1d21;
+  --dsw-static-neutral-250: #242429;
+  --dsw-static-neutral-300: #2e2e34;
+  --dsw-static-neutral-400: #44444c;
+  --dsw-static-neutral-500: #5e5e68;
+  --dsw-static-neutral-550: #6e6e79;
+  --dsw-static-neutral-600: #7f7f89;
+  --dsw-static-neutral-700: #a1a1aa;
+  --dsw-static-neutral-800: #c4c4ca;
+  --dsw-static-neutral-850: #d4d4d8;
+  --dsw-static-neutral-900: #e4e4e7;
+  --dsw-static-neutral-1000: #ffffff;
+
+  /* DSH nests two bg-base frames; keep the base light so the artwork survives
+     their combined alpha, while raised content remains deliberately opaque. */
+  --dsw-alias-bg-base: rgba(4, 4, 5, 0.08);
+  --dsw-alias-bg-layer-1: rgba(11, 11, 13, 0.64);
+  --dsw-alias-bg-layer-2: rgba(18, 18, 21, 0.8);
+  --dsw-alias-bg-layer-3: rgba(27, 27, 31, 0.88);
+  --dsw-alias-bg-overlay: rgba(9, 9, 11, 0.98);
+  --dsw-alias-bg-mask-1: rgba(0, 0, 0, 0.64);
+  --dsw-alias-bg-mask-2: rgba(0, 0, 0, 0.42);
+  --dsw-alias-bg-mask-3: rgba(0, 0, 0, 0.76);
+  --dsw-alias-border-l1: rgba(255, 255, 255, 0.1);
+  --dsw-alias-border-l2: rgba(255, 255, 255, 0.16);
+  --dsw-alias-border-l3: rgba(255, 255, 255, 0.24);
+  --dsw-alias-border-l4: rgba(255, 255, 255, 0.34);
+  --dsw-alias-brand-primary: #ff6fb6;
+  --dsw-alias-brand-primary-invert: #09090b;
+  --dsw-alias-brand-text: #ff9bcd;
+  --dsw-alias-button-primary-fill: #f15ca6;
+  --dsw-alias-button-primary-hover: #ff78ba;
+  --dsw-alias-button-primary-dimmed: #6a304d;
+  --dsw-alias-button-info-fill: #ededee;
+  --dsw-alias-button-info-hover: #ffffff;
+  --dsw-alias-button-floating-fill: rgba(17, 17, 20, 0.94);
+  --dsw-alias-button-floating-hover: #27272b;
+  --dsw-alias-interactive-bg-hover: rgba(255, 255, 255, 0.06);
+  --dsw-alias-interactive-bg-active: rgba(255, 111, 182, 0.14);
+  --dsw-alias-interactive-bg-hover-solid: #1c1c20;
+  --dsw-alias-label-primary: #f4f4f5;
+  --dsw-alias-label-primary-dimmed: #d4d4d8;
+  --dsw-alias-label-secondary: #b4b4bc;
+  --dsw-alias-label-tertiary: #85858f;
+  --dsw-alias-label-caption: #696973;
+  --dsw-alias-label-primary-foreground: #09090b;
+  --dsw-alias-label-primary-inverted: #ffffff;
+  --dsw-alias-markdown-code-block: rgba(5, 5, 6, 0.9);
+  --dsw-alias-markdown-code-block-banner: #141417;
+  --dsw-alias-markdown-inline-code: #242429;
+  --dsw-alias-scrollbar-bg-l1: #28282d;
+  --dsw-alias-scrollbar-bg-l2: #28282d;
+  --dsw-alias-scrollbar-hover-l1: #ff6fb6;
+  --dsw-alias-scrollbar-hover-l2: #ff6fb6;
+  --dsw-specific-sidebar-fill: rgba(3, 3, 4, 0.94);
+  --dsw-specific-sidebar-nav-item-active: rgba(255, 111, 182, 0.12);
+  --dsw-specific-sidebar-nav-item-active-accent: #ff6fb6;
+  --dsw-specific-sidebar-nav-item-hover: rgba(255, 255, 255, 0.055);
+  --dsw-specific-input-major: rgba(9, 9, 11, 0.86);
+  --dsw-specific-bubble: rgba(24, 24, 28, 0.88);
+  --dsw-specific-bubble-highlight: rgba(72, 28, 50, 0.86);
+  --dsw-specific-menu: #111114;
+  --dsw-specific-selector: #1c1c20;
+  --dsw-specific-tip: #17171a;
+
+  box-sizing: border-box;
+  min-height: 100vh;
+  margin: 0;
+  padding: 58px 14px 34px;
+  color: var(--bw-white);
+  background-color: var(--bw-black);
+}
+
+body[data-dsh-black-whale] [id='root'] {
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+  min-height: calc(100vh - 92px);
+  border: 1px solid var(--bw-line);
+  border-radius: 10px;
+  background: rgba(5, 5, 6, 0.06);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.54), inset 0 1px 0 rgba(255, 255, 255, 0.035);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  transition: background-color 180ms ease;
+}
+
+body[data-dsh-black-whale][data-dsh-black-whale-focus] [id='root'] {
+  background: rgba(4, 4, 5, 0.91);
+}
+
+body[data-dsh-black-whale] [data-pane='sidebar'] {
+  border-right: 1px solid var(--bw-line);
+  background: rgba(3, 3, 4, 0.82);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+
+body[data-dsh-black-whale] [data-pane='sidebar'] > div > :first-child {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+body[data-dsh-black-whale] [data-pane='sidebar'] [role='treeitem'][aria-selected='true'] {
+  box-shadow: inset 2px 0 0 var(--bw-pink);
+}
+
+body[data-dsh-black-whale] [data-pane='conversation'] {
+  background: linear-gradient(90deg, rgba(4, 4, 5, 0.34) 0%, rgba(4, 4, 5, 0.15) 52%, rgba(4, 4, 5, 0.015) 80%, transparent 100%);
+}
+
+body[data-dsh-black-whale] [data-pane='conversation'] > div > header {
+  border-color: var(--bw-line);
+  background: rgba(8, 8, 10, 0.68);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+body[data-dsh-black-whale] [data-pane='details'] {
+  border-color: var(--bw-line);
+  background: rgba(8, 8, 10, 0.46);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+body[data-dsh-black-whale] [role='dialog'] {
+  overflow: hidden;
+  border: 1px solid var(--bw-line-strong);
+  border-radius: 10px;
+  background: rgba(8, 8, 10, 0.94);
+  box-shadow: 0 28px 90px rgba(0, 0, 0, 0.64);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+}
+
+body[data-dsh-black-whale] button,
+body[data-dsh-black-whale] input,
+body[data-dsh-black-whale] textarea {
+  transition: color 140ms ease, border-color 140ms ease, background-color 140ms ease, box-shadow 140ms ease;
+}
+
+body[data-dsh-black-whale] button:focus-visible,
+body[data-dsh-black-whale] input:focus-visible,
+body[data-dsh-black-whale] textarea:focus-visible {
+  outline: 2px solid var(--bw-pink);
+  outline-offset: 2px;
+}
+
+body[data-dsh-black-whale] textarea:focus,
+body[data-dsh-black-whale] input:focus {
+  border-color: rgba(255, 111, 182, 0.58);
+  box-shadow: 0 0 0 3px rgba(255, 111, 182, 0.1);
+}
+
+/*
+ * DSH Web still has a few intentionally light controls. The client adapter
+ * marks only controls whose computed light background and light text would
+ * otherwise collapse into each other, keeping this independent of generated
+ * CSS-module class names across Harness releases.
+ */
+body[data-dsh-black-whale] [data-dsh-black-whale-ink] {
+  color: #111114 !important;
+  text-shadow: none !important;
+}
+
+body[data-dsh-black-whale] [data-dsh-black-whale-ink]::placeholder {
+  color: #5e5e68 !important;
+  opacity: 1;
+}
+
+body[data-dsh-black-whale] [data-dsh-black-whale-ink] svg {
+  color: #111114 !important;
+}
+
+body[data-dsh-black-whale] ::selection {
+  color: #070708;
+  background: #ff82c0;
+}
+
+.labBrand {
+  position: fixed;
+  z-index: 2147483000;
+  top: 9px;
+  left: 24px;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  height: 42px;
+  color: #f4f4f5;
+  pointer-events: none;
+  user-select: none;
+}
+
+.labBrandWhale {
+  width: 42px;
+  height: 34px;
+  object-fit: contain;
+  filter: invert(1) drop-shadow(0 0 12px rgba(255, 255, 255, 0.12));
+}
+
+.labBrand > div {
+  display: grid;
+  gap: 2px;
+}
+
+.labBrand strong {
+  font: 700 12px/1 var(--ds-font-family-code);
+  letter-spacing: 0.13em;
+}
+
+.labBrand span {
+  color: #71717a;
+  font: 600 9px/1 var(--ds-font-family-code);
+  letter-spacing: 0.15em;
+}
+
+.focusButton {
+  position: fixed;
+  z-index: 2147483001;
+  top: 14px;
+  right: 23px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 92px;
+  height: 30px;
+  padding: 0 12px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 4px;
+  color: #d4d4d8;
+  background: rgba(10, 10, 12, 0.82);
+  font: 600 11px/1 var(--dsw-font-family);
+  cursor: pointer;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.focusButton:hover,
+.focusButton[aria-pressed='true'] {
+  border-color: rgba(255, 111, 182, 0.48);
+  color: #fff;
+  background: rgba(29, 15, 23, 0.9);
+}
+
+.focusDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ff6fb6;
+  box-shadow: 0 0 10px rgba(255, 111, 182, 0.82);
+}
+
+.focusButton[aria-pressed='true'] .focusDot {
+  background: #f4f4f5;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.labStatus {
+  position: fixed;
+  z-index: 2147483000;
+  right: 24px;
+  bottom: 8px;
+  display: flex;
+  align-items: center;
+  height: 18px;
+  color: #71717a;
+  font: 600 9px/1 var(--ds-font-family-code);
+  letter-spacing: 0.12em;
+  pointer-events: none;
+  user-select: none;
+}
+
+.labStatus span {
+  padding: 0 9px;
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.labStatus span:first-child {
+  color: #ff7fbd;
+}
+
+.labStatus span:last-child {
+  padding-right: 0;
+  border-right: 0;
+}
+
+@media (max-width: 900px) {
+  body[data-dsh-black-whale] {
+    padding: 52px 7px 8px;
+    background-position: 68% center !important;
+  }
+
+  body[data-dsh-black-whale] [id='root'] {
+    min-height: calc(100vh - 60px);
+    border-radius: 8px;
+    background: rgba(5, 5, 6, 0.5);
+  }
+
+  .labBrand {
+    left: 12px;
+  }
+
+  .labBrand > div,
+  .labStatus {
+    display: none;
+  }
+
+  .focusButton {
+    top: 11px;
+    right: 12px;
+  }
+}
+
+/* Keep readable panel fallbacks on browsers that cannot composite blur. */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  body[data-dsh-black-whale] [data-pane='sidebar'] {
+    background: rgba(3, 3, 4, 0.94);
+  }
+
+  body[data-dsh-black-whale] [data-pane='details'] {
+    background: rgba(8, 8, 10, 0.78);
+  }
+
+  body[data-dsh-black-whale] [role='dialog'] {
+    background: #0b0b0d;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body[data-dsh-black-whale] *,
+  body[data-dsh-black-whale] [id='root'] {
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "id": "xiaoyao-sky-lab",
+  "name": "蓝粉双子 · 晴空研究所",
+  "nameEn": "Blue-Pink Twin Sky Lab",
+  "author": "夕小瑶科技说",
+  "tagline": "云端白昼 × 双主角协作 × 晶体数据流",
+  "description": "蓝鲸女仆与夕小瑶并肩工作的明亮云端研究所主题。",
+  "tags": ["xiaoyao", "deepseek", "sky", "duo", "bright"],
+  "accent": "#5795ff",
+  "bodyAttr": "data-dsh-sky-lab",
+  "package": "@xiaoyao-ai/dsh-client-ui-skin-sky-lab",
+  "version": "0.1.0",
+  "wiring": { "id": "ui-skin-sky-lab", "bundleWired": true },
+  "preview": { "dark": "preview/dark.webp" },
+  "order": 10
+}

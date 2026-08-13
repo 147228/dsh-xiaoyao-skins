@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 安全漏洞私下报告
+    url: https://github.com/147228/dsh-xiaoyao-skins/security/advisories/new
+    about: 不要在公开 Issue 中披露安全细节或 profile 内容

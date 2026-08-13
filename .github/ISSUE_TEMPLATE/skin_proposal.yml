@@ -1,0 +1,48 @@
+name: 新皮肤提案
+description: 在动手前登记视觉方向、素材来源和维护计划
+title: "[Skin] "
+labels: ["skin-proposal"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢投稿。请勿上传包含真实会话、账号、工作区或未授权素材的截图。
+  - type: input
+    id: name
+    attributes:
+      label: 皮肤名称与 slug
+      placeholder: 月兔研究所 / moon-rabbit
+    validations:
+      required: true
+  - type: textarea
+    id: direction
+    attributes:
+      label: 视觉方向
+      description: 色彩、角色、背景、排版，以及它和现有皮肤的区别。
+    validations:
+      required: true
+  - type: textarea
+    id: assets
+    attributes:
+      label: 素材来源与许可
+      description: 逐项说明自有、生图、第三方素材及可再分发依据。
+    validations:
+      required: true
+  - type: textarea
+    id: compatibility
+    attributes:
+      label: 兼容性计划
+      description: 如何验证浅/深色表面、缩放、窄屏、弹窗和原有 DSH 功能。
+    validations:
+      required: true
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: 确认
+      options:
+        - label: 我不会提交真实账号、会话、工作区、令牌或未脱敏截图
+          required: true
+        - label: 我拥有素材权利，或能提供允许本仓库再分发的许可
+          required: true
+        - label: 我同意皮肤只修改表现层，不接管 DSH 功能服务
+          required: true

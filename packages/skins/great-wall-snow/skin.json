@@ -1,0 +1,16 @@
+{
+  "id": "xiaoyao-great-wall-snow",
+  "name": "夕小瑶 · 雪岭长城",
+  "nameEn": "Xiaoyao Great Wall · Snow Pass",
+  "author": "夕小瑶科技说",
+  "tagline": "雪白 × 墨灰 × 正红披风",
+  "description": "以雪岭长城、冷白界面和正红小瑶为核心的冬境 DSH 主题。",
+  "tags": ["xiaoyao", "great-wall", "snow", "light"],
+  "accent": "#c42d29",
+  "bodyAttr": "data-dsh-great-wall-snow",
+  "package": "@xiaoyao-ai/dsh-client-ui-skin-great-wall-snow",
+  "version": "0.1.0",
+  "wiring": { "id": "ui-skin-great-wall-snow", "bundleWired": true },
+  "preview": { "dark": "preview/dark.png" },
+  "order": 13
+}

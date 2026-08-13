@@ -1,0 +1,16 @@
+{
+  "id": "xiaoyao-community-__SKIN_ID__",
+  "name": "__DISPLAY_NAME__",
+  "nameEn": "__DISPLAY_NAME__",
+  "author": "YOUR_NAME",
+  "tagline": "一句话说明颜色、气质和使用场景",
+  "description": "说明这套皮肤的设计故事，以及它如何保持 DSH 原有功能不变。",
+  "tags": ["community", "xiaoyao", "__SKIN_ID__"],
+  "accent": "#7c6cff",
+  "bodyAttr": "data-dsh-__SKIN_ID__",
+  "package": "__PACKAGE_NAME__",
+  "version": "0.1.0",
+  "wiring": { "id": "ui-skin-community-__SKIN_ID__", "bundleWired": true },
+  "preview": { "dark": "preview/dark.svg" },
+  "order": 100
+}

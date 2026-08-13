@@ -1,0 +1,43 @@
+name: 皮肤或安装器问题
+description: 报告显示、兼容性、安装、切换或回退问题
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: dropdown
+    id: component
+    attributes:
+      label: 影响范围
+      options:
+        - 安装器 / 切换命令
+        - 黑鲸实验室
+        - 探索之境
+        - 晴空研究所
+        - 长城系列
+        - 展厅 / 文档
+        - 创作者工具链
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: 环境
+      placeholder: macOS 15 / Node 24 / DSH 0.1.0-rc.6 / Chrome 140
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: 复现步骤
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 预期与实际结果
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: 脱敏日志或截图
+      description: 请删除 token、路径、账号、会话、项目名等私人信息。

@@ -1,0 +1,21 @@
+{
+  "id": "xiaoyao-ocean",
+  "name": "夕小瑶 · 探索之境",
+  "nameEn": "Xiaoyao Ocean Lab",
+  "author": "夕小瑶科技说",
+  "tagline": "深海蓝 × 猫娘粉 × 鲸鱼光效",
+  "description": "以夕小瑶粉发猫娘 IP 为主角、DeepSeek 鲸鱼为陪伴符号的 DSH Web GUI 沉浸式主题。",
+  "tags": ["xiaoyao", "deepseek", "ocean", "anime", "glass"],
+  "accent": "#ff79bd",
+  "bodyAttr": "data-dsh-xiaoyao",
+  "package": "@xiaoyao-ai/dsh-client-ui-skin-xiaoyao",
+  "version": "0.1.0",
+  "wiring": {
+    "id": "ui-skin-xiaoyao",
+    "bundleWired": true
+  },
+  "preview": {
+    "dark": "preview/dark.webp"
+  },
+  "order": 9
+}

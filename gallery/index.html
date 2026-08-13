@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="夕小瑶 DeepSeek Harness Web 皮肤合集与创作者入口">
+  <title>夕小瑶 DSH 皮肤馆</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="ambient ambient-a"></div><div class="ambient ambient-b"></div>
+  <header class="nav">
+    <a class="brand" href="./"><span class="mark">鲸</span><span><strong>夕小瑶 DSH 皮肤馆</strong><small>PRESENTATION LAYER ONLY</small></span></a>
+    <nav><a href="#skins">皮肤</a><a href="#create">创作</a><a href="https://github.com/147228/dsh-xiaoyao-skins">GitHub ↗</a></nav>
+  </header>
+  <main>
+    <section class="hero">
+      <p class="eyebrow">DEEPSEEK HARNESS · COMMUNITY SKINS</p>
+      <h1>换一套界面，<br><span>不换掉你的工作流。</span></h1>
+      <p class="lede">所有皮肤只进入 DSH Web 表现层。会话、模型、工具、沙箱、权限与项目数据仍由原生 Harness 提供。</p>
+      <div class="hero-actions"><a class="primary" href="#skins">挑一套皮肤</a><a class="secondary" href="#create">提交我的设计</a></div>
+      <div class="proof"><span>6 套首发皮肤</span><span>三平台 CI</span><span>可完整回滚</span><span>零运行时网络请求</span></div>
+    </section>
+    <section id="skins" class="section">
+      <div class="section-head"><div><p class="eyebrow">CURATED COLLECTION</p><h2>选择你的工作台</h2></div><input id="search" type="search" placeholder="搜索名称、作者或标签…" aria-label="搜索皮肤"></div>
+      <div id="skin-grid" class="grid" aria-live="polite"></div>
+    </section>
+    <section id="create" class="creator">
+      <div><p class="eyebrow">ONE COMMAND TO START</p><h2>你也可以做一套</h2><p>脚手架自带 DSH bundle、CSS 隔离、生命周期回滚测试、素材声明和提交前 doctor。设计从空白开始，安全边界不用重造。</p></div>
+      <div class="command"><code>npx --yes github:147228/dsh-xiaoyao-skins create my-skin</code><button data-copy="npx --yes github:147228/dsh-xiaoyao-skins create my-skin">复制</button></div>
+      <a class="text-link" href="https://github.com/147228/dsh-xiaoyao-skins/blob/main/CONTRIBUTING.md">阅读贡献规范 →</a>
+    </section>
+  </main>
+  <footer><span>夕小瑶科技说 · Community project</span><span>Code MIT · Artwork per asset declaration</span></footer>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <script type="module" src="app.js"></script>
+</body>
+</html>

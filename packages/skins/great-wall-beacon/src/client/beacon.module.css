@@ -1,0 +1,116 @@
+body[data-dsh-great-wall-beacon] {
+  --gw-accent: #d83a30;
+  --gw-accent-soft: rgba(216, 58, 48, 0.16);
+  --gw-ink: #f5ead9;
+  --gw-paper: #050506;
+  --gw-muted: #b8a78f;
+  --gw-line: rgba(224, 187, 124, 0.18);
+  --gw-root-bg: rgba(5, 5, 6, 0.06);
+  --gw-sidebar-bg: rgba(5, 5, 7, 0.86);
+  --gw-conversation-bg: rgba(5, 5, 7, 0.18);
+  --gw-header-bg: rgba(9, 8, 9, 0.72);
+  --gw-details-bg: rgba(8, 7, 8, 0.58);
+  --gw-dialog-bg: rgba(8, 7, 8, 0.96);
+  --gw-shadow: rgba(0, 0, 0, 0.58);
+  --gw-chrome-text: #f6e7cb;
+  --gw-chrome-muted: rgba(229, 202, 158, 0.64);
+  --gw-chrome-bg: rgba(7, 6, 7, 0.82);
+  --gw-focus-root: rgba(5, 5, 6, 0.92);
+
+  --dsw-static-blue-50: #1b1714;
+  --dsw-static-blue-75: #221c18;
+  --dsw-static-blue-100: #2c241e;
+  --dsw-static-blue-300: #5d4a3b;
+  --dsw-static-blue-400: #7a624d;
+  --dsw-static-blue-450: #9b7d60;
+  --dsw-static-blue-500: #c09b70;
+  --dsw-static-blue-600: #dcb887;
+  --dsw-static-blue-800: #edd8b5;
+  --dsw-static-blue-950: #fff4dc;
+  --dsw-static-deepseek-50: #2b1210;
+  --dsw-static-deepseek-100: #431714;
+  --dsw-static-deepseek-200: #681d19;
+  --dsw-static-deepseek-300: #92261f;
+  --dsw-static-deepseek-400: #bd3028;
+  --dsw-static-deepseek-450: #d83a30;
+  --dsw-static-deepseek-500: #e65044;
+  --dsw-static-deepseek-600: #ef776d;
+  --dsw-static-deepseek-800: #f7b3ac;
+  --dsw-static-deepseek-900: #fbdcd7;
+  --dsw-static-neutral-00: #050506;
+  --dsw-static-neutral-50: #0d0c0d;
+  --dsw-static-neutral-100: #151315;
+  --dsw-static-neutral-150: #1b1819;
+  --dsw-static-neutral-200: #241f20;
+  --dsw-static-neutral-250: #2c2627;
+  --dsw-static-neutral-300: #383031;
+  --dsw-static-neutral-400: #514547;
+  --dsw-static-neutral-500: #6d5d5f;
+  --dsw-static-neutral-550: #7e6d6e;
+  --dsw-static-neutral-600: #917f7f;
+  --dsw-static-neutral-700: #b5a4a1;
+  --dsw-static-neutral-800: #d0c2bd;
+  --dsw-static-neutral-850: #ded3cd;
+  --dsw-static-neutral-900: #eee5df;
+  --dsw-static-neutral-1000: #fff;
+
+  --dsw-alias-bg-base: rgba(5, 5, 6, 0.08);
+  --dsw-alias-bg-layer-1: rgba(12, 10, 11, 0.66);
+  --dsw-alias-bg-layer-2: rgba(25, 20, 20, 0.82);
+  --dsw-alias-bg-layer-3: rgba(38, 29, 28, 0.9);
+  --dsw-alias-bg-overlay: rgba(9, 8, 9, 0.98);
+  --dsw-alias-bg-mask-1: rgba(0, 0, 0, 0.66);
+  --dsw-alias-bg-mask-2: rgba(0, 0, 0, 0.42);
+  --dsw-alias-bg-mask-3: rgba(0, 0, 0, 0.78);
+  --dsw-alias-border-l1: rgba(224, 187, 124, 0.12);
+  --dsw-alias-border-l2: rgba(224, 187, 124, 0.2);
+  --dsw-alias-border-l3: rgba(224, 187, 124, 0.3);
+  --dsw-alias-border-l4: rgba(224, 187, 124, 0.42);
+  --dsw-alias-brand-primary: #d83a30;
+  --dsw-alias-brand-primary-invert: #070708;
+  --dsw-alias-brand-text: #ef887f;
+  --dsw-alias-button-primary-fill: #c72d27;
+  --dsw-alias-button-primary-hover: #e65044;
+  --dsw-alias-button-primary-dimmed: #6b2c28;
+  --dsw-alias-button-info-fill: #caa66c;
+  --dsw-alias-button-info-hover: #e2c18c;
+  --dsw-alias-button-floating-fill: rgba(20, 16, 17, 0.96);
+  --dsw-alias-button-floating-hover: #312627;
+  --dsw-alias-interactive-bg-hover: rgba(224, 187, 124, 0.08);
+  --dsw-alias-interactive-bg-active: rgba(216, 58, 48, 0.16);
+  --dsw-alias-interactive-bg-hover-solid: #251d1d;
+  --dsw-alias-label-primary: #f5ead9;
+  --dsw-alias-label-primary-dimmed: #ddcfbc;
+  --dsw-alias-label-secondary: #c0b19f;
+  --dsw-alias-label-tertiary: #968776;
+  --dsw-alias-label-caption: #786b5f;
+  --dsw-alias-label-primary-foreground: #100c0c;
+  --dsw-alias-label-primary-inverted: #fff;
+  --dsw-alias-markdown-code-block: rgba(6, 6, 7, 0.9);
+  --dsw-alias-markdown-code-block-banner: #181314;
+  --dsw-alias-markdown-inline-code: #2b2222;
+  --dsw-alias-scrollbar-bg-l1: #352929;
+  --dsw-alias-scrollbar-bg-l2: #352929;
+  --dsw-alias-scrollbar-hover-l1: #d83a30;
+  --dsw-alias-scrollbar-hover-l2: #d83a30;
+  --dsw-specific-sidebar-fill: rgba(5, 5, 7, 0.94);
+  --dsw-specific-sidebar-nav-item-active: rgba(216, 58, 48, 0.16);
+  --dsw-specific-sidebar-nav-item-active-accent: #d83a30;
+  --dsw-specific-sidebar-nav-item-hover: rgba(224, 187, 124, 0.07);
+  --dsw-specific-input-major: rgba(11, 9, 10, 0.9);
+  --dsw-specific-bubble: rgba(34, 27, 28, 0.9);
+  --dsw-specific-bubble-highlight: rgba(86, 29, 27, 0.9);
+  --dsw-specific-menu: #151112;
+  --dsw-specific-selector: #251d1d;
+  --dsw-specific-tip: #1c1717;
+}
+
+body[data-dsh-great-wall-beacon] [id='root'] {
+  border-radius: 10px;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+body[data-dsh-great-wall-beacon] [data-pane='conversation'] {
+  background: rgba(5, 5, 7, 0.2);
+}

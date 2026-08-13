@@ -1,0 +1,35 @@
+{
+  "name": "@xiaoyao-ai/dsh-client-ui-skin-great-wall-beacon",
+  "description": "夕小瑶 × DeepSeek Harness 烽火夜长城主题皮肤",
+  "version": "0.1.0",
+  "private": true,
+  "license": "SEE LICENSE IN LICENSE",
+  "author": "Xiaoyao AI / 夕小瑶科技说",
+  "homepage": "https://github.com/147228/dsh-xiaoyao-skins#great-wall-beacon",
+  "repository": { "type": "git", "url": "git+https://github.com/147228/dsh-xiaoyao-skins.git", "directory": "packages/skins/great-wall-beacon" },
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": { ".": "./lib/index.js", "./client": "./lib/client.js", "./package.json": "./package.json" },
+  "dsh": { "bundle": { "patch": "./cordis.patch.yml" }, "client": { "inject": [], "platform": "web" } },
+  "scripts": {
+    "embed": "node scripts/embed-assets.mjs",
+    "pretypecheck": "pnpm embed",
+    "pretest": "pnpm embed",
+    "prebuild": "pnpm embed",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "build": "tsdown",
+    "check": "pnpm typecheck && pnpm test && pnpm build"
+  },
+  "devDependencies": {
+    "@deepseek-ai/cordis": "^4.0.1",
+    "jsdom": "29.1.1",
+    "lightningcss": "^1.32.0",
+    "tsdown": "^0.22.2",
+    "typescript": "~5.7.2",
+    "unrun": "^0.3.1",
+    "vite-tsconfig-paths": "^6.1.1",
+    "vitest": "^4.1.8"
+  },
+  "files": ["lib", "cordis.patch.yml", "skin.json", "README.md", "LICENSE", "ASSET_LICENSE.md", "THIRD_PARTY_NOTICES.md"]
+}

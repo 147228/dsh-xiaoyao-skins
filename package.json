@@ -1,0 +1,58 @@
+{
+  "name": "@xiaoyao-ai/dsh-xiaoyao-skins",
+  "version": "0.1.0",
+  "private": true,
+  "description": "夕小瑶 DeepSeek Harness Web 皮肤合集、安装器与创作者工具链",
+  "license": "SEE LICENSE IN LICENSE",
+  "author": "Xiaoyao AI / 夕小瑶科技说",
+  "homepage": "https://147228.github.io/dsh-xiaoyao-skins/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/147228/dsh-xiaoyao-skins.git"
+  },
+  "bugs": {
+    "url": "https://github.com/147228/dsh-xiaoyao-skins/issues"
+  },
+  "type": "module",
+  "bin": {
+    "xiaoyao-skin": "./bin/xiaoyao-skin.mjs"
+  },
+  "engines": {
+    "node": ">=24"
+  },
+  "packageManager": "pnpm@11.19.0",
+  "files": [
+    "bin",
+    "catalog",
+    "templates",
+    "scripts/validate-skins.mjs",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "catalog:build": "node scripts/build-catalog.mjs",
+    "catalog:check": "node scripts/build-catalog.mjs --check",
+    "validate": "node scripts/validate-skins.mjs",
+    "typecheck": "pnpm -r --filter './packages/skins/**' typecheck",
+    "test:skins": "pnpm -r --filter './packages/skins/**' test",
+    "test:tools": "node --test tests/*.test.mjs",
+    "test": "pnpm test:skins && pnpm test:tools",
+    "build:skins": "pnpm -r --filter './packages/skins/**' build",
+    "gallery:build": "node scripts/build-gallery.mjs",
+    "build": "pnpm build:skins && pnpm gallery:build",
+    "check": "pnpm catalog:check && pnpm validate && pnpm typecheck && pnpm test && pnpm build && pnpm catalog:check && pnpm validate",
+    "skin:new": "node bin/xiaoyao-skin.mjs create --collection",
+    "pack:release": "node scripts/pack-release.mjs"
+  },
+  "devDependencies": {
+    "@deepseek-ai/cordis": "^4.0.1",
+    "jsdom": "29.1.1",
+    "lightningcss": "^1.32.0",
+    "tsdown": "^0.22.2",
+    "typescript": "~5.7.2",
+    "unrun": "^0.3.1",
+    "vite": "^7.1.3",
+    "vite-tsconfig-paths": "^6.1.1",
+    "vitest": "^4.1.8"
+  }
+}

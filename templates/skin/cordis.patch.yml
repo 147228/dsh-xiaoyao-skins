@@ -1,0 +1,4 @@
+# Standalone DSH Web skin bundle. Keep this row unique across the collection.
+- insert:
+    - id: ui-skin-community-__SKIN_ID__
+      name: '__PACKAGE_NAME__'

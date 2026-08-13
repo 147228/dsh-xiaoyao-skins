@@ -1,0 +1,10 @@
+packages:
+  - .
+  - packages/skins/*
+
+minimumReleaseAgeExclude:
+  - '@deepseek-ai/cordis@4.0.1'
+  - '@deepseek-ai/cosmokit@1.8.2'
+
+allowBuilds:
+  esbuild: true

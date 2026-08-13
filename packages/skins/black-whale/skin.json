@@ -1,0 +1,22 @@
+{
+  "id": "xiaoyao-black-whale",
+  "name": "夕小瑶 · 黑鲸实验室",
+  "nameEn": "Xiaoyao Black Whale Lab",
+  "author": "夕小瑶科技说",
+  "tagline": "官网黑鲸 × 石墨黑 × 小瑶粉",
+  "description": "以 DSH 官网黑鲸轮廓为品牌锚点，用石墨黑、冷白和小面积樱粉重塑的专业研究台皮肤。",
+  "tags": ["xiaoyao", "deepseek", "black-whale", "lab", "monochrome"],
+  "accent": "#ff6fb6",
+  "bodyAttr": "data-dsh-black-whale",
+  "package": "@xiaoyao-ai/dsh-client-ui-skin-black-whale",
+  "version": "0.1.3",
+  "homepage": "https://github.com/147228/dsh-xiaoyao-skins#black-whale",
+  "wiring": {
+    "id": "ui-skin-black-whale",
+    "bundleWired": true
+  },
+  "preview": {
+    "dark": "preview/dark.jpg"
+  },
+  "order": 10
+}
