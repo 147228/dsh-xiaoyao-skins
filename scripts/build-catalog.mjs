@@ -56,7 +56,7 @@ const catalog = {
   schemaVersion: 1,
   collection: collection.name,
   version: collection.version,
-  compatibility: { dsh: '0.1.0-rc.6', node: '>=24' },
+  compatibility: { dsh: '0.1.0-rc.6', node: '>=20' },
   repository: 'https://github.com/147228/dsh-xiaoyao-skins',
   skins: entries,
 }

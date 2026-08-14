@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.1.3 - 2026-08-14
+
+- 修复 `dsh plugin` 因系统未安装全局 pnpm 而退出的问题：安装器会优先使用现有 pnpm，
+  否则通过 Corepack 或 npx 临时提供与当前 Node.js 兼容的版本，不修改全局配置；
+- 增加 Node.js、DSH、pnpm 的安装前检查和中文故障提示；
+- 安装器兼容 Node.js 20 / 22 / 24，完整开发与构建仍以 Node.js 24 为准。
+
 ## 0.1.2 - 2026-08-14
 
 - 展厅六张预览更新为飞书文档中的真实 DSH Web profile 截图；
