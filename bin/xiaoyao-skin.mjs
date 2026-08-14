@@ -1,13 +1,147 @@
 #!/usr/bin/env node
-import { cpSync, existsSync, mkdirSync, readFileSync, readdirSync, realpathSync, renameSync, statSync, writeFileSync } from 'node:fs'
-import { homedir } from 'node:os'
-import { basename, dirname, join, resolve } from 'node:path'
+import { chmodSync, cpSync, existsSync, mkdirSync, mkdtempSync, readFileSync, readdirSync, realpathSync, renameSync, rmSync, statSync, writeFileSync } from 'node:fs'
+import { homedir, tmpdir } from 'node:os'
+import { basename, delimiter, dirname, join, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { spawnSync } from 'node:child_process'
 
 const kitRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..')
 const catalogPath = join(kitRoot, 'catalog', 'skins.json')
 const namePattern = /^[a-z0-9]+(?:-[a-z0-9]+)*$/
+const minimumNodeMajor = 20
+const pnpm10 = '10.34.5'
+const pnpm11 = '11.19.0'
+
+export function nodeMajor(version = process.versions.node) {
+  const match = String(version).match(/^v?(\d+)/)
+  return match ? Number(match[1]) : Number.NaN
+}
+
+export function assertSupportedNode(version = process.versions.node) {
+  const major = nodeMajor(version)
+  if (Number.isFinite(major) && major >= minimumNodeMajor) return
+  throw new Error([
+    `切换皮肤需要 Node.js ${minimumNodeMajor} 或更高版本，当前为 ${version}。`,
+    '下载：https://nodejs.org/en/download',
+    '推荐使用 Node.js 24 LTS；升级后重新运行同一条命令即可。',
+  ].join('\n'))
+}
+
+export function compatiblePnpmVersion(version = process.versions.node) {
+  const [major = 0, minor = 0] = String(version).replace(/^v/, '').split('.').map(Number)
+  return major > 22 || (major === 22 && minor >= 13) ? pnpm11 : pnpm10
+}
+
+function commandResult(spawn, command, args, env, platform, cwd) {
+  return spawn(command, args, {
+    env,
+    cwd,
+    encoding: 'utf8',
+    stdio: 'pipe',
+    shell: platform === 'win32',
+  })
+}
+
+function commandWorks(result) {
+  return !result.error && result.status === 0
+}
+
+function resultDetail(result) {
+  const detail = String(result.stderr || result.stdout || result.error?.message || '').trim()
+  return detail ? `\n${detail.slice(0, 600)}` : ''
+}
+
+function pathKey(env, platform) {
+  if (platform !== 'win32') return 'PATH'
+  return Object.keys(env).find((key) => key.toLowerCase() === 'path') ?? 'Path'
+}
+
+function writePnpmProxy(directory, platform, runner, version) {
+  if (platform === 'win32') {
+    const command = runner === 'corepack'
+      ? `@echo off\r\ncorepack pnpm@${version} %*\r\n`
+      : `@echo off\r\nnpx --yes pnpm@${version} %*\r\n`
+    writeFileSync(join(directory, 'pnpm.cmd'), command)
+    return
+  }
+  const command = runner === 'corepack'
+    ? `#!/bin/sh\nexec corepack pnpm@${version} "$@"\n`
+    : `#!/bin/sh\nexec npx --yes pnpm@${version} "$@"\n`
+  const path = join(directory, 'pnpm')
+  writeFileSync(path, command)
+  chmodSync(path, 0o755)
+}
+
+/** Prepare the package-manager environment expected by `dsh plugin`.
+ *
+ * DSH currently invokes `pnpm` by name. If it is absent or incompatible with
+ * the active Node.js version, expose a temporary, version-pinned proxy backed
+ * by Corepack (preferred) or npx. No global package or shim is installed.
+ */
+export function preparePluginManagerEnvironment(options = {}) {
+  const env = { ...(options.env ?? process.env) }
+  const spawn = options.spawn ?? spawnSync
+  const platform = options.platform ?? process.platform
+  const makeTempDir = options.makeTempDir ?? (() => mkdtempSync(join(tmpdir(), 'xiaoyao-skin-corepack-')))
+  const removeTempDir = options.removeTempDir ?? ((path) => rmSync(path, { recursive: true, force: true }))
+  const pathDelimiter = options.pathDelimiter ?? delimiter
+  const version = options.pnpmVersion ?? compatiblePnpmVersion(options.nodeVersion)
+  const writeProxy = options.writeProxy ?? writePnpmProxy
+  const cwd = options.cwd
+
+  const direct = commandResult(spawn, 'pnpm', ['--version'], env, platform, cwd)
+  if (commandWorks(direct)) return { env, source: 'pnpm', version: String(direct.stdout).trim(), cleanup() {} }
+
+  const corepack = commandResult(spawn, 'corepack', ['--version'], env, platform, cwd)
+  const npx = commandWorks(corepack)
+    ? null
+    : commandResult(spawn, 'npx', ['--version'], env, platform, cwd)
+  const runner = commandWorks(corepack) ? 'corepack' : commandWorks(npx) ? 'npx' : null
+  if (!runner) {
+    throw new Error([
+      'DSH 管理 profile 插件需要 pnpm，但当前没有可用的 pnpm、Corepack 或 npx。',
+      '请安装 Node.js 24 LTS（自带 npm），然后重新运行同一条命令。',
+      `pnpm 检测结果：${resultDetail(direct).trim() || '命令不存在'}`,
+    ].join('\n'))
+  }
+
+  const shimDir = makeTempDir()
+  try {
+    writeProxy(shimDir, platform, runner, version)
+    const key = pathKey(env, platform)
+    const runtimeEnv = { ...env, [key]: [shimDir, env[key]].filter(Boolean).join(pathDelimiter) }
+    runtimeEnv.COREPACK_ENABLE_DOWNLOAD_PROMPT = '0'
+    const verified = commandResult(spawn, 'pnpm', ['--version'], runtimeEnv, platform, cwd)
+    if (!commandWorks(verified)) {
+      throw new Error([
+        `无法为本次操作启动兼容的 pnpm ${version}。`,
+        resultDetail(verified).trim() || '未知错误',
+        `可手动安装后重试：npm install -g pnpm@${version}`,
+      ].join('\n'))
+    }
+    return {
+      env: runtimeEnv,
+      source: runner,
+      version,
+      cleanup: () => removeTempDir(shimDir),
+    }
+  } catch (error) {
+    removeTempDir(shimDir)
+    throw error
+  }
+}
+
+export function assertDshAvailable(dsh = 'dsh', options = {}) {
+  const env = options.env ?? process.env
+  const spawn = options.spawn ?? spawnSync
+  const result = commandResult(spawn, dsh, ['--version'], env, options.platform ?? process.platform, options.cwd)
+  if (commandWorks(result)) return
+  throw new Error([
+    `找不到可用的 DeepSeek Harness 命令：${dsh}`,
+    '请先安装并初始化官方 DSH：npm install -g @deepseek-ai/dsh',
+    resultDetail(result).trim(),
+  ].filter(Boolean).join('\n'))
+}
 
 export function loadCatalog(path = catalogPath) {
   return JSON.parse(readFileSync(path, 'utf8'))
@@ -64,10 +198,10 @@ export function renderCommands(plan, profile, dsh = 'dsh') {
   return commands
 }
 
-function run(command, args, dryRun) {
+function run(command, args, dryRun, env = process.env) {
   console.log(`$ ${[command, ...args].join(' ')}`)
   if (dryRun) return
-  const result = spawnSync(command, args, { stdio: 'inherit', env: process.env })
+  const result = spawnSync(command, args, { stdio: 'inherit', env })
   if (result.error) throw result.error
   if (result.status !== 0) throw new Error(`${command} exited with ${result.status}`)
 }
@@ -161,7 +295,20 @@ async function main() {
     if (!target) throw new Error('missing skin name')
     const { manifest } = readProfileManifest(dshHome, profile)
     const plan = planSwitch(manifest, catalog, target)
-    for (const [program, ...argv] of renderCommands(plan, profile, dsh)) run(program, argv, dryRun)
+    let runtime = { env: process.env, source: 'dry-run', cleanup() {} }
+    if (!dryRun) {
+      assertSupportedNode()
+      assertDshAvailable(dsh)
+      runtime = preparePluginManagerEnvironment()
+      if (runtime.source !== 'pnpm') {
+        console.log(`ℹ 未检测到兼容的全局 pnpm，已通过 ${runtime.source === 'corepack' ? 'Corepack' : 'npx'} 为本次操作临时提供 pnpm ${runtime.version}。`)
+      }
+    }
+    try {
+      for (const [program, ...argv] of renderCommands(plan, profile, dsh)) run(program, argv, dryRun, runtime.env)
+    } finally {
+      runtime.cleanup()
+    }
     console.log(plan.target
       ? `\n✓ 已启用 ${plan.target.name}。重启或刷新 dsh web 即可看到。其他 DSH 插件未改动。`
       : '\n✓ 已移除夕小瑶合集皮肤，恢复 DeepSeek Harness 原生界面。其他 DSH 插件未改动。')

@@ -30,7 +30,9 @@
 
 ## 一行换肤
 
-需要 Node.js 24+，并已安装、初始化 DeepSeek Harness。命令默认操作 `web` profile。
+需要 Node.js 20+（推荐 24 LTS），并已安装、初始化 DeepSeek Harness。命令默认操作
+`web` profile。**不需要预先安装 pnpm**：安装器会优先复用可用版本；没有时通过
+Corepack 或 npx 为本次操作临时提供兼容版本，不修改全局 pnpm 配置。
 
 ```bash
 npx --yes --package=https://github.com/147228/dsh-xiaoyao-skins/releases/latest/download/xiaoyao-skin-kit.tgz xiaoyao-skin use black-whale
@@ -49,6 +51,19 @@ npx --yes --package=https://github.com/147228/dsh-xiaoyao-skins/releases/latest/
 ```
 
 可用 `--profile <name>` 指定其他 profile，用 `--dry-run` 只查看将执行的 DSH 命令。
+
+### 安装兼容性与排错
+
+| 环境 | 安装器行为 |
+| --- | --- |
+| Node.js 24 / 22.13+ | 复用可用 pnpm，或临时使用 pnpm 11.19 |
+| Node.js 20 / 22.0–22.12 | 复用可用 pnpm，或临时使用 pnpm 10.34，避开 pnpm 11 的 Node 版本限制 |
+| 未安装全局 pnpm | 自动走 Corepack；Corepack 也不可用时自动走随 Node 提供的 npx |
+| `--dry-run` | 只打印 DSH 命令，不检查、不下载、不写入 profile |
+
+如果看到 `dsh: pnpm not found on PATH`，说明使用的是旧版工具包；重新执行上面同一条
+`releases/latest` 命令即可获取修复版。若自动兜底因网络或代理失败，安装器会给出与当前
+Node.js 匹配的手动 `npm install -g pnpm@...` 命令。安装目标失败时不会移除当前皮肤。
 
 ## 六套真实效果
 
@@ -114,6 +129,8 @@ npx --yes --package=https://github.com/147228/dsh-xiaoyao-skins/releases/latest/
 开始，或直接阅读 [贡献指南](CONTRIBUTING.md)。
 
 ## 本地开发
+
+完整开发、构建与发布使用 Node.js 24。
 
 ```bash
 corepack enable

@@ -33,6 +33,7 @@ dsh --profile web
 
 ## CI
 
-每个 Pull Request 会在 Ubuntu、macOS、Windows 的 Node.js 24 环境执行完整检查，并
+安装器单测会在 Node.js 20、22、24 上执行；完整检查会在 Ubuntu、macOS、Windows 的
+Node.js 24 环境执行，并
 验证生成目录无漂移。`v*` 标签只有在完整检查通过后才会生成六个皮肤 tarball、工具包、
 目录文件和 SHA-256 校验值。

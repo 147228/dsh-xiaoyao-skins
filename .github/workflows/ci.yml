@@ -11,6 +11,20 @@ permissions:
   contents: read
 
 jobs:
+  installer-compat:
+    name: Installer / Node ${{ matrix.node }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        node: [20, 22, 24]
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: ${{ matrix.node }}
+      - run: node --test tests/*.test.mjs
+
   check:
     name: ${{ matrix.os }} / Node 24
     runs-on: ${{ matrix.os }}
