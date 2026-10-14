@@ -29,7 +29,7 @@
     "typescript": "~5.7.2",
     "unrun": "^0.3.1",
     "vite-tsconfig-paths": "^6.1.1",
-    "vitest": "^4.1.8"
+    "vitest": "^4.1.11"
   },
   "files": ["lib", "cordis.patch.yml", "skin.json", "README.md", "LICENSE", "ASSET_LICENSE.md", "THIRD_PARTY_NOTICES.md"]
 }
