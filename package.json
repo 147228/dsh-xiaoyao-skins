@@ -48,14 +48,14 @@
     "pack:release": "node scripts/pack-release.mjs"
   },
   "devDependencies": {
-    "@deepseek-ai/cordis": "^4.0.1",
-    "jsdom": "29.1.1",
+    "@deepseek-ai/cordis": "^4.0.5",
+    "jsdom": "30.1.3",
     "lightningcss": "^1.32.0",
-    "tsdown": "^0.22.2",
-    "typescript": "~5.7.2",
+    "tsdown": "^0.23.4",
+    "typescript": "~7.0.2",
     "unrun": "^0.3.1",
-    "vite": "^7.1.3",
+    "vite": "^8.3.5",
     "vite-tsconfig-paths": "^6.1.1",
-    "vitest": "^4.1.8"
+    "vitest": "^5.0.5"
   }
 }
